@@ -212,7 +212,8 @@ export default function HomePage() {
                 Get in Touch
               </h2>
               <p className="mx-auto max-w-[700px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                We're here to help. Contact us today for a free consultation.
+                We&aposre here to help. Contact us today for a free
+                consultation.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
                 <div className="flex items-center space-x-2">
