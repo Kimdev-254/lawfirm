@@ -125,7 +125,7 @@ export default function HomePage() {
                     "Protecting your rights in criminal proceedings.",
                 },
                 {
-                  title: "Business Law",
+                  title: "Civil and Criminal Litigation",
                   icon: Briefcase,
                   description: "Legal solutions for your business needs.",
                 },
