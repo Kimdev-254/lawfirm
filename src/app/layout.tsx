@@ -1,12 +1,13 @@
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
-import "./globals.css"
+import { Navbar } from "@/components/navbar"
+import "@/styles/globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Kenneth Waweru Law Firm",
-  description: "Expert legal representation you can trust",
+  title: "Omar Ochoa Law Firm",
+  description: "Texas Trial Attorney - Over $1 Billion Recovered",
 }
 
 export default function RootLayout({
@@ -16,8 +17,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} flex flex-col min-h-screen`}>
-        <div className="flex-grow flex flex-col">{children}</div>
+      <body className={`${inter.className} bg-slate-950 text-white`}>
+        <Navbar />
+        {children}
+        <footer className="bg-slate-900 py-8">
+          <div className="container text-center text-sm text-slate-400">
+            <p>
+              &copy; {new Date().getFullYear()} Omar Ochoa Law Firm. All rights
+              reserved.
+            </p>
+            <p className="mt-2">
+              121 N. 10th Street McAllen, TX 78501 | (956) 253-3121 | Available
+              24/7
+            </p>
+          </div>
+        </footer>
       </body>
     </html>
   )
