@@ -1,264 +1,137 @@
-"use client"
-
-import { useState, useEffect } from "react"
 import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Switch } from "@/components/ui/switch"
-import {
-  ArrowRight,
-  Mail,
-  MapPin,
-  Moon,
-  Phone,
-  Sun,
-  Users,
-  Briefcase,
-  Scale,
-} from "lucide-react"
+import { Check } from "lucide-react"
+import { ContactForm } from "@/components/contact-form"
+import { Navbar } from "@/components/navbar"
 
-export default function HomePage() {
-  const [darkMode, setDarkMode] = useState(false)
-
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark")
-    } else {
-      document.documentElement.classList.remove("dark")
-    }
-  }, [darkMode])
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode)
-  }
-
+export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
-      <header className="px-4 lg:px-8 h-16 flex items-center border-b border-gray-200 dark:border-gray-800">
-        <div className="container mx-auto flex justify-between items-center">
-          <Link href="/" className="flex items-center justify-center">
-            <Scale className="h-6 w-6 mr-2" />
-            <span className="font-bold text-xl">KW LAW</span>
-          </Link>
-          <nav className="hidden md:flex gap-6">
-            <Link
-              className="text-sm font-medium hover:underline underline-offset-4"
-              href="/"
-            >
-              Home
-            </Link>
-            <Link
-              className="text-sm font-medium hover:underline underline-offset-4"
-              href="/about"
-            >
-              About
-            </Link>
-            <Link
-              className="text-sm font-medium hover:underline underline-offset-4"
-              href="/practice-areas"
-            >
-              Practice Areas
-            </Link>
-            <Link
-              className="text-sm font-medium hover:underline underline-offset-4"
-              href="/contact"
-            >
-              Contact
-            </Link>
-          </nav>
-          <div className="flex items-center space-x-2">
-            <Switch
-              checked={darkMode}
-              onCheckedChange={toggleDarkMode}
-              aria-label="Toggle dark mode"
-            />
-            {darkMode ? (
-              <Moon className="h-4 w-4" />
-            ) : (
-              <Sun className="h-4 w-4" />
-            )}
-          </div>
-        </div>
-      </header>
-      <main className="flex-1">
-        <section
-          className="relative w-full h-screen bg-cover bg-center"
-          style={{ backgroundImage: "url('/herobg.jpg')" }}
-        >
-          <div className="absolute inset-0 bg-black opacity-50"></div>{" "}
-          {/* Optional overlay for contrast */}
-          <div className="relative z-10 flex flex-col justify-center items-center h-full text-white text-center">
-            <h1 className="text-5xl font-bold mb-4">Welcome to Our Law Firm</h1>
-            <p className="text-xl mb-8">
-              Delivering exceptional legal services with dedication and
-              expertise.
-            </p>
-            <button className="px-6 py-2 bg-blue-500 rounded-lg hover:bg-blue-600">
-              Learn More
-            </button>
-          </div>
-        </section>
-        <section className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container mx-auto px-4 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-8">
-              Our Practice Areas
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  title: "Personal Injury",
-                  icon: Users,
-                  description:
-                    "We fight for fair compensation for your injuries.",
-                },
-                {
-                  title: "Family Law",
-                  icon: Briefcase,
-                  description:
-                    "Compassionate support for family legal matters.",
-                },
-                {
-                  title: "Criminal Defense",
-                  icon: Scale,
-                  description:
-                    "Protecting your rights in criminal proceedings.",
-                },
-                {
-                  title: "Civil and Criminal Litigation",
-                  icon: Briefcase,
-                  description: "Legal solutions for your business needs.",
-                },
-                {
-                  title: "Estate Planning",
-                  icon: Users,
-                  description:
-                    "Secure your family's future with proper planning.",
-                },
-                {
-                  title: "Employment Law",
-                  icon: Scale,
-                  description: "Advocating for fair workplace practices.",
-                },
-              ].map((area) => (
-                <Card
-                  key={area.title}
-                  className="flex flex-col items-center text-center"
-                >
-                  <CardHeader>
-                    <area.icon className="w-12 h-12 mb-4 text-primary" />
-                    <CardTitle>{area.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-500 dark:text-gray-400">
-                      {area.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+    <div className="min-h-screen bg-slate-950">
+      <Navbar />
+      <main>
+        <section className="relative pt-32 pb-16 md:pt-40 md:pb-24">
+          <div className="absolute inset-0 bg-[url('/images/scales-of-justice.jpg')] bg-cover bg-center opacity-10" />
+          <div className="container relative grid lg:grid-cols-2 gap-12 items-start">
+            <div className="space-y-8">
               <div className="space-y-4">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
-                  Why Choose Us?
-                </h2>
-                <p className="text-gray-500 dark:text-gray-400">
-                  At Kenneth Waweru Law Firm, we combine expertise, dedication,
-                  and a client-first approach to deliver exceptional legal
-                  services.
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold">
+                  Over $1 Billion Recovered
+                </h1>
+                <p className="text-xl font-semibold text-orange-500">
+                  NO WIN. NO FEE. GUARANTEED.
                 </p>
-                <ul className="space-y-2">
-                  <li className="flex items-center">
-                    <ArrowRight className="mr-2 h-4 w-4 text-primary" />
-                    <span>Over 15 years of legal experience</span>
-                  </li>
-                  <li className="flex items-center">
-                    <ArrowRight className="mr-2 h-4 w-4 text-primary" />
-                    <span>Personalized attention to every case</span>
-                  </li>
-                  <li className="flex items-center">
-                    <ArrowRight className="mr-2 h-4 w-4 text-primary" />
-                    <span>Proven track record of success</span>
-                  </li>
-                  <li className="flex items-center">
-                    <ArrowRight className="mr-2 h-4 w-4 text-primary" />
-                    <span>Committed to client satisfaction</span>
-                  </li>
-                </ul>
-                <Button asChild>
-                  <Link href="/about">Learn More About Us</Link>
-                </Button>
+                <p className="text-lg text-slate-400">
+                  The Omar Ochoa Law Firm represents clients in{" "}
+                  <span className="text-white">
+                    all types of civil cases across Texas
+                  </span>
+                  . We've won on behalf of consumers, homeowners, business
+                  owners, whistleblowers, the injured, and more.
+                </p>
               </div>
-              <div className="relative w-full h-[600px] overflow-hidden rounded-lg">
+              <div className="space-y-4">
+                <div className="flex items-center gap-2 text-slate-300">
+                  <div className="w-5 h-5 rounded-full bg-orange-500 flex items-center justify-center">
+                    <Check className="w-4 h-4 text-white" />
+                  </div>
+                  Highly Personalized Service
+                </div>
+                <div className="flex items-center gap-2 text-slate-300">
+                  <div className="w-5 h-5 rounded-full bg-orange-500 flex items-center justify-center">
+                    <Check className="w-4 h-4 text-white" />
+                  </div>
+                  Proven Track Record of Success
+                </div>
+                <div className="flex items-center gap-2 text-slate-300">
+                  <div className="w-5 h-5 rounded-full bg-orange-500 flex items-center justify-center">
+                    <Check className="w-4 h-4 text-white" />
+                  </div>
+                  Top Rated Trial Attorney
+                </div>
+              </div>
+              <div className="flex items-center gap-4">
                 <Image
-                  src="/image3.jpg"
-                  alt="Kenneth Waweru in his office"
-                  layout="fill"
-                  objectFit="cover"
+                  src="/images/google-reviews.png"
+                  alt="Google Reviews"
+                  width={200}
+                  height={80}
                   className="rounded-lg"
                 />
               </div>
+              <ContactForm />
+              <div className="flex items-center justify-center gap-4 pt-8">
+                <Image
+                  src="/images/badge-1.png"
+                  alt="Legal Badge"
+                  width={80}
+                  height={80}
+                />
+                <Image
+                  src="/images/badge-2.png"
+                  alt="Legal Badge"
+                  width={80}
+                  height={80}
+                />
+                <Image
+                  src="/images/badge-3.png"
+                  alt="Legal Badge"
+                  width={80}
+                  height={80}
+                />
+                <Image
+                  src="/images/badge-4.png"
+                  alt="Legal Badge"
+                  width={80}
+                  height={80}
+                />
+                <Image
+                  src="/images/badge-5.png"
+                  alt="Legal Badge"
+                  width={80}
+                  height={80}
+                />
+              </div>
             </div>
-          </div>
-        </section>
-        <section className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="flex flex-col items-center space-y-4 text-center">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Get in Touch
-              </h2>
-              <p className="mx-auto max-w-[700px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                We&aposre here to help. Contact us today for a free
-                consultation.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                <div className="flex items-center space-x-2">
-                  <Phone className="w-5 h-5 text-primary" />
-                  <span>+254 123 456 789</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Mail className="w-5 h-5 text-primary" />
-                  <span>info@kennethwawerulaw.com</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <MapPin className="w-5 h-5 text-primary" />
-                  <span>123 Legal Street, Nairobi, Kenya</span>
+            <div className="relative">
+              <div className="relative h-[600px] w-full">
+                <Image
+                  src="/placeholder.svg?height=600&width=500"
+                  alt="Lead Attorney"
+                  fill
+                  className="object-cover rounded-lg"
+                />
+              </div>
+              <div className="mt-8 space-y-4">
+                <h2 className="text-4xl font-bold">Omar Ochoa Law Firm</h2>
+                <div className="space-y-4">
+                  <h3 className="text-xl font-semibold text-orange-500">
+                    TEXAS TRIAL ATTORNEY
+                  </h3>
+                  <p className="text-slate-400">
+                    At the Omar Ochoa Law Firm, our mission is to be different
+                    from other firms in all the ways that are important and
+                    necessary. We are not a settlement mill, we treat our
+                    clients like our family. We don't focus on settling cases as
+                    quickly as possible, we focus on resolving cases as much as
+                    possible.
+                  </p>
+                  <p className="text-slate-400">
+                    Justice is the goal we seek, and we believe we will not
+                    achieve our client's goals by taking shortcuts. We prepare
+                    every case as if it will go to trial. Over $1 billion we
+                    reach the best outcome. A testament to our method is each of
+                    the verdicts and settlements we have obtained - many in
+                    excess of $1 million.
+                  </p>
+                  <p className="text-slate-400">
+                    From our offices in McAllen, we handle cases throughout
+                    Texas, including Austin, Dallas, San Antonio, and Houston.
+                  </p>
                 </div>
               </div>
-              <Button asChild>
-                <Link href="/contact">Contact Us</Link>
-              </Button>
             </div>
           </div>
         </section>
       </main>
-      <footer className="w-full py-6 bg-gray-100 dark:bg-gray-800">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col gap-2 sm:flex-row sm:items-center justify-between">
-            <p className="text-xs text-gray-500 dark:text-gray-400">
-              © 2024 Kenneth Waweru Law Firm. All rights reserved.
-            </p>
-            <nav className="flex gap-4 sm:gap-6">
-              <Link
-                className="text-xs hover:underline underline-offset-4"
-                href="/terms"
-              >
-                Terms of Service
-              </Link>
-              <Link
-                className="text-xs hover:underline underline-offset-4"
-                href="/privacy"
-              >
-                Privacy Policy
-              </Link>
-            </nav>
-          </div>
-        </div>
-      </footer>
     </div>
   )
 }
