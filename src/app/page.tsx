@@ -5,30 +5,30 @@ import { Navbar } from "@/components/navbar"
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-slate-950">
+    <div className="min-h-screen bg-law-firm">
       <Navbar />
       <main>
-        <section className="relative pt-32 pb-16 md:pt-40 md:pb-24">
-          <div className="absolute inset-0 bg-[url('/images/scales-of-justice.jpg')] bg-cover bg-center opacity-10" />
-          <div className="container relative grid lg:grid-cols-2 gap-12 items-start">
-            <div className="space-y-8">
-              <div className="space-y-4">
-                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold">
-                  Over $1 Billion Recovered
+        <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 flex justify-between">
+          <div className="absolute inset-0 bg-[url('/herobg.jpg')] bg-cover bg-center opacity-10" />
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative grid lg:grid-cols-2 gap-4 items-start max-w-screen-2xl">
+            <div className="space-y-10">
+              <div className="space-y-6">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold leading-tight">
+                  Kenneth Waweru & Company Advocates
                 </h1>
-                <p className="text-xl font-semibold text-orange-500">
-                  NO WIN. NO FEE. GUARANTEED.
+                <p className="text-2xl font-semibold text-law-firm-orange">
+                  <i>Our practice is your solution</i>
                 </p>
-                <p className="text-lg text-slate-400">
-                  The Omar Ochoa Law Firm represents clients in{" "}
-                  <span className="text-white">
-                    all types of civil cases across Texas
+                <p className="text-xl text-slate-300 leading-relaxed">
+                  The Law Firm represents clients in{" "}
+                  <span className="text-white font-semibold">
+                    all types of cases across the East African region.
                   </span>
-                  . We've won on behalf of consumers, homeowners, business
-                  owners, whistleblowers, the injured, and more.
+                  We’ve won on behalf of consumers, business owners, companies,
+                  the injured, and more.
                 </p>
               </div>
-              <div className="space-y-4">
+              <div className="space-y-6">
                 <div className="flex items-center gap-2 text-slate-300">
                   <div className="w-5 h-5 rounded-full bg-orange-500 flex items-center justify-center">
                     <Check className="w-4 h-4 text-white" />
@@ -48,7 +48,7 @@ export default function Home() {
                   Top Rated Trial Attorney
                 </div>
               </div>
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-6">
                 <Image
                   src="/images/google-reviews.png"
                   alt="Google Reviews"
@@ -58,7 +58,7 @@ export default function Home() {
                 />
               </div>
               <ContactForm />
-              <div className="flex items-center justify-center gap-4 pt-8">
+              <div className="flex items-center justify-center gap-6 pt-10">
                 <Image
                   src="/images/badge-1.png"
                   alt="Legal Badge"
@@ -91,40 +91,46 @@ export default function Home() {
                 />
               </div>
             </div>
-            <div className="relative">
-              <div className="relative h-[600px] w-full">
+            <div className="relative space-y-10">
+              <div className="relative h-[800px] w-full">
                 <Image
-                  src="/placeholder.svg?height=600&width=500"
+                  src="/new1.png?height=600&width=500"
                   alt="Lead Attorney"
                   fill
                   className="object-cover rounded-lg"
                 />
               </div>
-              <div className="mt-8 space-y-4">
-                <h2 className="text-4xl font-bold">Omar Ochoa Law Firm</h2>
+              <div className="space-y-6 text-indent">
+                <h2 className="text-4xl font-bold">
+                  Kenneth Waweru & Company Advocates
+                </h2>
                 <div className="space-y-4">
-                  <h3 className="text-xl font-semibold text-orange-500">
-                    TEXAS TRIAL ATTORNEY
+                  <h3 className="text-2xl font-semibold text-law-firm-orange">
+                    YOUR ATTORNEY
                   </h3>
-                  <p className="text-slate-400">
-                    At the Omar Ochoa Law Firm, our mission is to be different
-                    from other firms in all the ways that are important and
-                    necessary. We are not a settlement mill, we treat our
-                    clients like our family. We don't focus on settling cases as
-                    quickly as possible, we focus on resolving cases as much as
-                    possible.
+                  <p className="text-lg text-slate-300 leading-relaxed">
+                    At the Kenneth Waweru & Company Advocates firm, we
+                    specialize in comprehensive legal services across multiple
+                    practice areas. Established with a commitment to providing
+                    high-quality legal representation, the firm offers expertise
+                    in corporate law, conveyancing, litigation, intellectual
+                    property, family law, personal injury, debt collection and
+                    dispute resolution.
                   </p>
-                  <p className="text-slate-400">
-                    Justice is the goal we seek, and we believe we will not
-                    achieve our client's goals by taking shortcuts. We prepare
-                    every case as if it will go to trial. Over $1 billion we
-                    reach the best outcome. A testament to our method is each of
-                    the verdicts and settlements we have obtained - many in
-                    excess of $1 million.
+                  <p className="text-lg text-slate-300 leading-relaxed">
+                    The firm is known for its client-focused approach, strategic
+                    legal counsel, and deep understanding of both Kenyan and
+                    international legal frameworks. With a team of experienced
+                    lawyers and support staff, Kenneth Waweru & Company
+                    Advocates serves a diverse clientele including corporations,
+                    small businesses, and individual clients, delivering
+                    pragmatic and innovative legal solutions tailored to meet
+                    the unique needs of each client.
                   </p>
-                  <p className="text-slate-400">
-                    From our offices in McAllen, we handle cases throughout
-                    Texas, including Austin, Dallas, San Antonio, and Houston.
+                  <p className="text-lg text-slate-300 leading-relaxed">
+                    The firm prides itself on maintaining the highest
+                    professional standards, integrity, and a track record of
+                    successful legal outcomes.
                   </p>
                 </div>
               </div>
