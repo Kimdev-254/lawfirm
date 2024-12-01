@@ -1,5 +1,4 @@
 "use client"
-
 import React, { useEffect, useState } from "react"
 import Link from "next/link"
 import { ChevronDown, Menu } from "lucide-react"
@@ -8,18 +7,15 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
-
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10) // Change state if user scrolls down 10px or more
     }
-
     window.addEventListener("scroll", handleScroll)
     return () => {
       window.removeEventListener("scroll", handleScroll)
     }
   }, [])
-
   return (
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
@@ -94,13 +90,13 @@ export function Navbar() {
             </div>
             <div
               className={`text-sm ${
-                isScrolled ? "text-gray-600" : "text-slate-400"
+                isScrolled ? "text-white" : "text-slate-400"
               }`}
             >
               Available 24/7
             </div>
           </div>
-          <Button variant={`${isScrolled ? "outline" : ""}`}>
+          <Button variant={isScrolled ? "outline" : "default"}>
             Free Consultation
           </Button>
         </div>
