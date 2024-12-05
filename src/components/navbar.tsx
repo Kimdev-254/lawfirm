@@ -9,7 +9,7 @@ export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10) // Change state if user scrolls down 10px or more
+      setIsScrolled(window.scrollY > 3) // Change state if user scrolls down 10px or more
     }
     window.addEventListener("scroll", handleScroll)
     return () => {
@@ -26,7 +26,7 @@ export function Navbar() {
     >
       {!isScrolled && (
         <div className="border-b border-slate-800">
-          <div className="container flex items-center justify-between h-10 text-sm">
+          <div className="container flex items-baseline justify-between h-10 text-sm">
             <div className="flex space-x-4 text-slate-400">
               <span>Seniors Apartment, Waiyaki Way | Nairobi</span>
             </div>
@@ -51,12 +51,12 @@ export function Navbar() {
         </Link>
         <div className="hidden lg:flex items-center gap-5">
           {[
-            "Insurance Litigation",
+            "Litigation & ADR",
+            "Family Law",
             "Personal Injury",
-            "Civil Litigation",
-            "Case Results",
-            "Reviews",
-            "Meet Our Team",
+            "Technology Law & Intellectual Law",
+            "Law",
+            "",
           ].map((item, index) => (
             <div key={index} className="relative group">
               <button
@@ -90,13 +90,13 @@ export function Navbar() {
             </div>
             <div
               className={`text-sm ${
-                isScrolled ? "text-white" : "text-slate-400"
+                isScrolled ? "text-gray-600" : "text-slate-400"
               }`}
             >
               Available 24/7
             </div>
           </div>
-          <Button variant={isScrolled ? "outline" : "default"}>
+          <Button variant={isScrolled ? "text-white" : "text-white"}>
             Free Consultation
           </Button>
         </div>
