@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react"
 import Link from "next/link"
-import { ChevronDown, Menu, X } from "lucide-react"
+import { ChevronDown, MapPin, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Logo } from "@/components/ui/logo"
@@ -11,54 +11,71 @@ const navigationItems = [
   {
     title: "Litigation & ADR",
     items: [
+      { title: "Mediation", href: "/mediatation" },
+      { title: "Arbitration", href: "/arbitration" },
       { title: "Civil Litigation", href: "/civil-litigation" },
       { title: "Criminal Litigation", href: "/criminal-litigation" },
       { title: "Commercial Litigation", href: "/commercial-litigation" },
-      { title: "Alternative Dispute Resolution", href: "/adr" },
-      {
-        title: "Constitutional & Administrative Law",
-        href: "/constitutional-law",
-      },
     ],
   },
   {
     title: "Family Law",
     items: [
-      { title: "Divorce & Separation", href: "/divorce-separation" },
-      { title: "Child Custody & Support", href: "/child-custody" },
-      { title: "Marriage & Cohabitation", href: "/marriage-law" },
-      { title: "Estate Planning", href: "/estate-planning" },
+      { title: "Divorce", href: "/divorce" },
       { title: "Adoption", href: "/adoption" },
+      { title: "Succession", href: "/succession" },
+      { title: "Child Custody", href: "/child-custody" },
+      { title: "Matrimonial Property", href: "/matrimonial-property" },
     ],
   },
   {
     title: "Personal Injury",
     items: [
       { title: "Car Accidents", href: "/car-accidents" },
+      { title: "Wrongful Death", href: "/wrongful-death" },
+      { title: "Product Liability", href: "/product-liability" },
       { title: "Workplace Injuries", href: "/workplace-injuries" },
       { title: "Medical Malpractice", href: "/medical-malpractice" },
-      { title: "Product Liability", href: "/product-liability" },
-      { title: "Wrongful Death", href: "/wrongful-death" },
     ],
   },
   {
     title: "Technology Law",
     items: [
+      { title: "Patent Law", href: "/patent-law" },
+      { title: "Copyright Law", href: "/copyright-law" },
+      { title: "Data Protection", href: "/data-protection" },
       { title: "Intellectual Property", href: "/intellectual-property" },
       { title: "Technology Contracts", href: "/technology-contracts" },
+    ],
+  },
+  {
+    title: "Intellectual Property Law",
+    items: [
+      { title: "Patent Law", href: "/patent-law" },
+      { title: "Trademarks", href: "/trademarks" },
+      { title: "Trade Secrets", href: "/trade-secrets" },
+      { title: "Copyright Law", href: "/copyright-law" },
       { title: "Data Protection", href: "/data-protection" },
-      { title: "Cybersecurity", href: "/cybersecurity" },
-      { title: "Software Licensing", href: "/software-licensing" },
     ],
   },
   {
     title: "Corporate Law",
     items: [
-      { title: "Business Formation", href: "/business-formation" },
-      { title: "Mergers & Acquisitions", href: "/mergers-acquisitions" },
-      { title: "Corporate Governance", href: "/corporate-governance" },
       { title: "Contract Law", href: "/contract-law" },
       { title: "Employment Law", href: "/employment-law" },
+      { title: "Business Formation", href: "/business-formation" },
+      { title: "Corporate Governance", href: "/corporate-governance" },
+      { title: "Mergers & Acquisitions", href: "/mergers-acquisitions" },
+    ],
+  },
+  {
+    title: "Other",
+    items: [
+      { title: "Tax Law", href: "/tax-law" },
+      { title: "Conveyancing", href: "/" },
+      { title: "Debt Collection", href: "/debt-collection" },
+      { title: "Estate Planning", href: "/estate-planning" },
+      { title: "Immigration Law", href: "/immigration-law" },
     ],
   },
 ]
@@ -89,11 +106,11 @@ export function Navbar() {
         <Link href="/" className="flex items-center">
           <Logo className={isScrolled ? "text-slate-900" : "text-white"} />
         </Link>
-        <div className="hidden lg:flex items-center space-x-6">
+        <div className="hidden lg:flex items-center space-x-3">
           {navigationItems.map((item, index) => (
             <div key={index} className="relative group">
               <button
-                className={`flex items-center gap-1 py-2 text-sm font-medium ${
+                className={`flex items-center gap-1 py-2 text-sm font-medium whitespace-nowrap ${
                   isScrolled
                     ? "text-slate-800 hover:text-orange-500"
                     : "text-slate-200 hover:text-white"
@@ -102,21 +119,73 @@ export function Navbar() {
                 {item.title}{" "}
                 <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
               </button>
-              <div className="absolute left-0 top-full hidden group-hover:block bg-white rounded-lg shadow-lg mt-1 w-56 py-2 transition-all duration-200 opacity-0 group-hover:opacity-100">
-                {item.items.map((subItem, subIndex) => (
-                  <Link
-                    key={subIndex}
-                    href={subItem.href}
-                    className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-orange-500"
-                  >
-                    {subItem.title}
-                  </Link>
-                ))}
+              <div className="absolute left-0 top-full hidden group-hover:block bg-white rounded-lg shadow-lg mt-1 w-72 py-2 transition-all duration-200 opacity-0 group-hover:opacity-100">
+                <div className="absolute h-4 -top-4 left-0 right-0" />
+                <div
+                  className={`${
+                    item.items.length > 4 ? "grid grid-cols-1 gap-x-2" : ""
+                  }`}
+                >
+                  {item.items.map((subItem, subIndex) => (
+                    <Link
+                      key={subIndex}
+                      href={subItem.href}
+                      className="block px-4 py-1.5 text-sm text-slate-700 hover:bg-slate-50 hover:text-orange-500 whitespace-nowrap"
+                    >
+                      {subItem.title}
+                    </Link>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
         </div>
         <div className="hidden lg:flex items-center space-x-4">
+          <div className="flex flex-col items-center">
+            <div className="relative group">
+              <Button
+                variant="ghost"
+                size="icon"
+                className={`${
+                  isScrolled
+                    ? "text-slate-800 hover:text-orange-500"
+                    : "text-white hover:text-orange-500"
+                } h-8 w-8`}
+              >
+                <MapPin className="w-7 h-7" />
+              </Button>
+              <div className="absolute right-0 top-full bg-white rounded-lg shadow-lg mt-1 w-80 py-2 transition-all duration-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible">
+                <div className="p-4 border-b">
+                  <h4 className="font-semibold text-black">Our Location</h4>
+                  <p className="text-sm text-slate-800">
+                    Seniors Apartment, Waiyaki Way | Nairobi
+                  </p>
+                </div>
+                <div className="p-2">
+                  <Link
+                    href="/contact"
+                    className="block w-full p-2 text-left text-sm text-black hover:bg-orange-500 rounded-md transition-colors"
+                  >
+                    View on map
+                  </Link>
+                  <Link
+                    href="/contact#directions"
+                    className="block w-full p-2 text-left text-sm text-black hover:bg-orange-500 rounded-md transition-colors"
+                  >
+                    Get directions
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <Link
+              href="/contact"
+              className={`text-xs ${
+                isScrolled
+                  ? "text-slate-600 hover:text-orange-500"
+                  : "text-slate-400 hover:text-white"
+              } transition-colors`}
+            ></Link>
+          </div>
           <div className="text-right">
             <div className="text-orange-500 text-sm font-medium">
               0714521136
@@ -180,7 +249,9 @@ export function Navbar() {
                   </div>
                   <div className="text-sm text-slate-600">Available 24/7</div>
                 </div>
-                <Button className="w-full">Free Consultation</Button>
+                <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white text-sm font-medium rounded-lg transition-all transform hover:scale-105 duration-300 ease-out">
+                  Free Consultation
+                </Button>
               </div>
             </nav>
           </SheetContent>
