@@ -32,7 +32,7 @@ export function Navbar() {
             </div>
             <div className="flex items-center gap-4">
               <Link href="/" className="text-slate-400 hover:text-white">
-                EN
+                EN/FR/SP
               </Link>
             </div>
           </div>
