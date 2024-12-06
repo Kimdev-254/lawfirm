@@ -33,7 +33,7 @@ export function ContactForm() {
               <Input id="last-name" placeholder="Last Name" required />
             </div>
           </div>
-          <div className="space-y-2 text-slate-900">
+          <div className="space-y-2">
             <Label htmlFor="email">Email*</Label>
             <Input
               id="email"
