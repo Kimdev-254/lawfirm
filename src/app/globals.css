@@ -44,6 +44,11 @@
     @apply bg-background text-foreground;
   }
 }
+@layer utilities {
+  .bg-hero {
+    background-image: url("/herobg.jpg");
+  }
+}
 
 /* Custom styles for the law firm website */
 .bg-law-firm {
@@ -56,4 +61,7 @@
 
 .btn-law-firm {
   @apply bg-orange-600 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded;
+}
+.text-justify {
+  text-align: justify;
 }
