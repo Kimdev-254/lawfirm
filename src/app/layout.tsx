@@ -1,14 +1,23 @@
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import { Navbar } from "@/components/navbar"
+import { Playfair_Display, Cormorant_Garamond } from "next/font/google"
 import "./globals.css"
 
-const inter = Inter({ subsets: ["latin"] })
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+  display: "swap",
+})
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  variable: "--font-cormorant",
+  display: "swap",
+  weight: ["300", "400", "500", "600", "700"], // Add this line to specify weights
+})
 
 export const metadata: Metadata = {
   title: "Kenneth Waweru & Company Advocates",
-  description:
-    "Providing expert legal solutions with professionalism and dedication in Kenya.",
+  description: "Expert legal services across East Africa",
 }
 
 export default function RootLayout({
@@ -17,22 +26,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} bg-law-firm text-white`}>
-        <Navbar />
-        {children}
-        <footer className="bg-slate-900 py-8">
-          <div className="container text-center text-sm text-slate-400">
-            <p>
-              &copy; {new Date().getFullYear()} KW & Company Advocates Firm. All
-              rights reserved.
-            </p>
-            <p className="mt-2">
-              Seniors Apartment, Waiyaki way | 0714521136 | Available 24/7
-            </p>
-          </div>
-        </footer>
-      </body>
+    <html
+      lang="en"
+      className={`${playfair.variable} ${cormorant.variable} scroll-smooth`}
+    >
+      <body className="bg-slate-950 text-white antialiased">{children}</body>
     </html>
   )
 }

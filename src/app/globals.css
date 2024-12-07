@@ -31,8 +31,8 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
-
-    --radius: 0.5rem;
+    --font-playfair: "Playfair Display", serif;
+    --font-cormorant: "Cormorant Garamond", serif;
   }
 }
 
@@ -44,24 +44,26 @@
     @apply bg-background text-foreground;
   }
 }
-@layer utilities {
-  .bg-hero {
-    background-image: url("/herobg.jpg");
+
+.font-playfair {
+  font-family: var(--font-playfair);
+}
+
+.font-cormorant {
+  font-family: var(--font-cormorant);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 
-/* Custom styles for the law firm website */
 .bg-law-firm {
-  background-color: #1a1f2e;
-}
-
-.text-law-firm-orange {
-  color: #f97316;
-}
-
-.btn-law-firm {
-  @apply bg-orange-600 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded;
-}
-.text-justify {
-  text-align: justify;
+  background-color: rgb(2, 6, 23);
 }
