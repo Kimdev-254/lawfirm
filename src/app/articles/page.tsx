@@ -1,76 +1,138 @@
 "use client"
 
-import Link from "next/link"
+import { useState } from "react"
+import { Navbar } from "@/components/navbar"
 import { Button } from "@/components/ui/button"
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
+import Link from "next/link"
+import { X } from "lucide-react"
+import { motion, AnimatePresence } from "framer-motion"
+import { SearchBar } from "@/components/search-bar"
+import { ArticleCard } from "@/components/article-card"
+import { FullArticle } from "@/components/full-article"
 
 const articles = [
   {
-    title: "Understanding Personal Injury Claims",
+    id: 1,
+    title: "Understanding Corporate Law in East Africa",
+    category: "Corporate Law",
     excerpt:
-      "Learn about the key elements of personal injury claims and how to protect your rights.",
+      "An in-depth look at the complexities of corporate law in the East African region...",
     date: "2024-03-15",
+    content:
+      "Corporate law in East Africa is a complex and evolving field. This article explores the key aspects of corporate governance, mergers and acquisitions, and regulatory compliance across countries like Kenya, Tanzania, and Uganda. We'll discuss recent changes in legislation and their impact on businesses operating in the region...",
   },
   {
-    title: "The Importance of Estate Planning",
+    id: 2,
+    title: "Family Law: Navigating Divorce Proceedings",
+    category: "Family Law",
     excerpt:
-      "Discover why estate planning is crucial for securing your family's future.",
+      "A comprehensive guide to understanding and managing divorce proceedings in Kenya...",
     date: "2024-03-10",
+    content:
+      "Divorce can be a challenging and emotional process. This guide provides a step-by-step overview of divorce proceedings in Kenya, covering topics such as property division, child custody, and alimony. We'll also discuss the role of mediation and how to choose the right legal representation for your case...",
   },
   {
-    title: "Navigating Divorce Proceedings",
-    excerpt: "A comprehensive guide to the divorce process and what to expect.",
+    id: 3,
+    title: "Property Law: Recent Changes and Their Impact",
+    category: "Property Law",
+    excerpt:
+      "Exploring the latest changes in property law and how they affect property owners and investors...",
     date: "2024-03-05",
+    content:
+      "Recent changes in property law have significant implications for both property owners and investors in East Africa. This article examines new regulations regarding land ownership, zoning laws, and property taxes. We'll also discuss how these changes may affect the real estate market and provide tips for navigating the new legal landscape...",
   },
   {
-    title: "Criminal Defense Strategies",
-    excerpt: "Explore common defense strategies used in criminal cases.",
+    id: 4,
+    title: "The Rise of Legal Tech in African Law Firms",
+    category: "Legal Tech",
+    excerpt:
+      "How technology is transforming the legal landscape in Africa and what it means for clients and lawyers...",
     date: "2024-02-28",
-  },
-  {
-    title: "Business Law: Protecting Your Company",
-    excerpt:
-      "Essential legal considerations for business owners and entrepreneurs.",
-    date: "2024-02-20",
-  },
-  {
-    title: "Workers' Compensation: Know Your Rights",
-    excerpt:
-      "An overview of workers' compensation laws and how to file a claim.",
-    date: "2024-02-15",
+    content:
+      "Legal technology is rapidly changing the way law firms operate in Africa. This article explores the adoption of AI, blockchain, and cloud-based solutions in legal practices across the continent. We'll discuss how these technologies are improving efficiency, reducing costs, and enhancing client services. Additionally, we'll look at the challenges and opportunities that legal tech presents for African law firms...",
   },
 ]
 
 export default function ArticlesPage() {
+  const [filteredArticles, setFilteredArticles] = useState(articles)
+  const [selectedArticle, setSelectedArticle] = useState<
+    (typeof articles)[0] | null
+  >(null)
+
+  const handleSearch = (query: string) => {
+    const filtered = articles.filter(
+      (article) =>
+        article.title.toLowerCase().includes(query.toLowerCase()) ||
+        article.category.toLowerCase().includes(query.toLowerCase()) ||
+        article.excerpt.toLowerCase().includes(query.toLowerCase())
+    )
+    setFilteredArticles(filtered)
+  }
+
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-8">Legal Articles</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {articles.map((article, index) => (
-          <Card key={index}>
-            <CardHeader>
-              <CardTitle>{article.title}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-gray-500 dark:text-gray-400">
-                {article.excerpt}
-              </p>
-            </CardContent>
-            <CardFooter className="flex justify-between items-center">
-              <span className="text-sm text-gray-500">{article.date}</span>
-              <Button variant="outline" asChild>
-                <Link href={`/articles/${index + 1}`}>Read More</Link>
-              </Button>
-            </CardFooter>
-          </Card>
-        ))}
-      </div>
-    </div>
+    <motion.div
+      className="min-h-screen bg-white"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
+      <Navbar />
+      <main className="container mx-auto px-4 py-16">
+        <motion.div
+          className="flex items-center justify-between mb-8"
+          initial={{ y: -20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+        >
+          <h1 className="text-4xl font-playfair font-bold text-slate-800">
+            Our Articles
+          </h1>
+          <Link href="/" passHref>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="text-slate-800 hover:bg-slate-100"
+            >
+              <X className="h-6 w-6" />
+            </Button>
+          </Link>
+        </motion.div>
+
+        <motion.div
+          initial={{ y: -20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.4, duration: 0.5 }}
+        >
+          <SearchBar onSearch={handleSearch} />
+        </motion.div>
+
+        <AnimatePresence mode="wait">
+          {selectedArticle ? (
+            <FullArticle
+              key="full-article"
+              article={selectedArticle}
+              onClose={() => setSelectedArticle(null)}
+            />
+          ) : (
+            <motion.div
+              key="article-grid"
+              className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -20, opacity: 0 }}
+              transition={{ delay: 0.6, duration: 0.5 }}
+            >
+              {filteredArticles.map((article) => (
+                <ArticleCard
+                  key={article.id}
+                  article={article}
+                  onClick={() => setSelectedArticle(article)}
+                />
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </main>
+    </motion.div>
   )
 }
