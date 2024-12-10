@@ -3,6 +3,7 @@
 import Image from "next/image"
 import { Check } from "lucide-react"
 import { ContactForm } from "@/components/contact-form"
+import { ArticlesCard } from "@/components/articles-card"
 import { Navbar } from "@/components/navbar"
 import { motion } from "framer-motion"
 import { useTypewriter, Cursor } from "react-simple-typewriter"
@@ -21,7 +22,7 @@ export default function Home() {
       <main>
         <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 flex justify-between">
           <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-gradient-to-r from-black/100 via-black/90 to-black/60 z-10" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/100 via-black/90 to-black/30 z-10" />
             <Image
               src="/herobg.jpg"
               alt="Background"
@@ -37,15 +38,12 @@ export default function Home() {
                   className="text-4xl sm:text-5xl md:text-6xl font-playfair font-bold leading-tight"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.8,
-                    ease: [0.4, 0, 0.2, 1],
-                  }}
+                  transition={{ duration: 0.8 }}
                 >
                   Kenneth Waweru & Company Advocates
                 </motion.h1>
                 <motion.p
-                  className="text-2xl font-semibold text-orange-600 text-law-firm-orange font-cormorant h-8"
+                  className="text-2xl font-semibold text-law-firm-orange font-cormorant h-8"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.8 }}
@@ -106,7 +104,10 @@ export default function Home() {
                   className="rounded-lg"
                 />
               </motion.div>
-              <ContactForm />
+              <div className="flex gap-6">
+                <ArticlesCard />
+                <ContactForm />
+              </div>
             </div>
             <div className="relative space-y-10 lg:pl-8">
               <motion.div
@@ -133,7 +134,7 @@ export default function Home() {
                   Kenneth Waweru & Company Advocates
                 </h2>
                 <div className="space-y-4">
-                  <h3 className="text-2xl font-semibold text-orange-600 text-law-firm-orange">
+                  <h3 className="text-2xl font-semibold text-law-firm-orange">
                     YOUR ATTORNEY
                   </h3>
                   <div className="space-y-4 text-lg text-slate-300 leading-relaxed">
