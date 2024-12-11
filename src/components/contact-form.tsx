@@ -14,39 +14,17 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 
-const kenyanCounties = [
-  "Nairobi",
-  "Mombasa",
-  "Kisumu",
-  "Nakuru",
-  "Eldoret",
-  "Machakos",
-  "Kisii",
-  "Thika",
-  "Malindi",
-  "Kitale",
-  "Garissa",
-  "Kakamega",
-  "Nyeri",
-  "Meru",
-  "Lamu",
-  "Nanyuki",
-  "Kilifi",
-  "Voi",
-  "Naivasha",
-  "Embu",
-  "Bungoma",
-  "Athi River",
-  "Bomet",
-  "Kericho",
-  "Ol Kalou",
-  "Ngong",
-  "Kitui",
-  "Limuru",
-  "Isiolo",
-  "Kerugoya",
-  "Kikuyu",
-  "Ruiru",
+const country = [
+  "Kenya",
+  "Uganda",
+  "Tanzania",
+  "Rwanda",
+  "Burundi",
+  "South Sudan",
+  "Somalia",
+  "Ethiopia",
+  "Eritrea",
+  "Djibouti",
 ]
 
 export function ContactForm() {
@@ -69,26 +47,37 @@ export function ContactForm() {
     >
       <form
         onSubmit={handleSubmit}
-        className="space-y-6 bg-white p-6 rounded-lg shadow-md"
+        className="space-y-1 bg-white p-6 rounded-lg shadow-md"
       >
-        <h2 className="text-2xl font-bold text-slate-800 mb-6">
-          Get a Free Consultation
+        <h2 className="text-2xl font-semibold font-serif text-slate-950 mb-6 mr-5">
+          Request a Free Case Review
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <Label htmlFor="name" className="text-slate-700">
-              Name
+              First Name*
             </Label>
             <Input
-              id="name"
+              id="firstName"
               className="bg-white border-slate-300 text-slate-800 placeholder:text-slate-400"
-              placeholder="Your name"
+              placeholder="first name"
+              required
+            />
+          </div>
+          <div>
+            <Label htmlFor="lastName" className="text-slate-700">
+              Last Name*
+            </Label>
+            <Input
+              id="lastName"
+              className="bg-white border-slate-300 text-slate-800 placeholder:text-slate-400"
+              placeholder="last name"
               required
             />
           </div>
           <div>
             <Label htmlFor="email" className="text-slate-700">
-              Email
+              Email*
             </Label>
             <Input
               id="email"
@@ -100,7 +89,7 @@ export function ContactForm() {
           </div>
           <div>
             <Label htmlFor="phone" className="text-slate-700">
-              Phone
+              Phone*
             </Label>
             <Input
               id="phone"
@@ -111,17 +100,17 @@ export function ContactForm() {
             />
           </div>
           <div>
-            <Label htmlFor="county" className="text-slate-700">
-              County
+            <Label htmlFor="country" className="text-slate-700">
+              Country
             </Label>
             <Select>
               <SelectTrigger className="bg-white border-slate-300 text-slate-800">
-                <SelectValue placeholder="Select your county" />
+                <SelectValue placeholder="Select your country" />
               </SelectTrigger>
               <SelectContent>
-                {kenyanCounties.map((county) => (
-                  <SelectItem key={county} value={county.toLowerCase()}>
-                    {county}
+                {country.map((country) => (
+                  <SelectItem key={country} value={country.toLowerCase()}>
+                    {country}
                   </SelectItem>
                 ))}
               </SelectContent>
@@ -141,10 +130,10 @@ export function ContactForm() {
         </div>
         <Button
           type="submit"
-          className="w-full bg-orange-500 hover:bg-orange-600 text-white font-medium"
+          className="w-full bg-orange-600 hover:bg-orange-800 text-white font-medium"
           disabled={isSubmitting}
         >
-          {isSubmitting ? "Sending..." : "Send Message"}
+          {isSubmitting ? "Submitting..." : "Submit"}
         </Button>
       </form>
     </motion.div>
