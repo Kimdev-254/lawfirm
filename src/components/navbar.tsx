@@ -11,41 +11,65 @@ const navigationItems = [
   {
     title: "Litigation & ADR",
     items: [
-      { title: "Mediation", href: "/mediatation" },
-      { title: "Arbitration", href: "/arbitration" },
-      { title: "Civil Litigation", href: "/civil-litigation" },
-      { title: "Criminal Litigation", href: "/criminal-litigation" },
-      { title: "Commercial Litigation", href: "/commercial-litigation" },
+      { title: "Mediation", href: "/litigation-adr#mediatation" },
+      { title: "Arbitration", href: "/litigation-adr#arbitration" },
+      { title: "Civil Litigation", href: "/litigation-adr#civil-litigation" },
+      {
+        title: "Criminal Litigation",
+        href: "/litigation-adr#criminal-litigation",
+      },
+      {
+        title: "Commercial Litigation",
+        href: "/litigation-adr#commercial-litigation",
+      },
     ],
   },
   {
     title: "Family Law",
     items: [
-      { title: "Divorce", href: "/divorce" },
-      { title: "Adoption", href: "/adoption" },
-      { title: "Succession", href: "/succession" },
-      { title: "Child Custody", href: "/child-custody" },
-      { title: "Matrimonial Property", href: "/matrimonial-property" },
+      { title: "Divorce", href: "/family-law#divorce" },
+      { title: "Adoption", href: "/family-law#adoption" },
+      { title: "Succession", href: "/family-law#succession" },
+      { title: "Child Custody", href: "/family-law#child-custody" },
+      {
+        title: "Matrimonial Property",
+        href: "/family-law#matrimonial-property",
+      },
     ],
   },
   {
     title: "Personal Injury",
     items: [
-      { title: "Car Accidents", href: "/car-accidents" },
-      { title: "Wrongful Death", href: "/wrongful-death" },
-      { title: "Product Liability", href: "/product-liability" },
-      { title: "Workplace Injuries", href: "/workplace-injuries" },
-      { title: "Medical Malpractice", href: "/medical-malpractice" },
+      { title: "Car Accidents", href: "/personal-injury#car-accidents" },
+      { title: "Wrongful Death", href: "/personal-injury#wrongful-death" },
+      {
+        title: "Product Liability",
+        href: "/personal-injury#product-liability",
+      },
+      {
+        title: "Workplace Injuries",
+        href: "/personal-injury#workplace-injuries",
+      },
+      {
+        title: "Medical Malpractice",
+        href: "/personal-injury#medical-malpractice",
+      },
     ],
   },
   {
     title: "Technology Law",
     items: [
-      { title: "Patent Law", href: "/patent-law" },
-      { title: "Copyright Law", href: "/copyright-law" },
-      { title: "Data Protection", href: "/data-protection" },
-      { title: "Intellectual Property", href: "/intellectual-property" },
-      { title: "Technology Contracts", href: "/technology-contracts" },
+      { title: "Patent Law", href: "/technology-law#patent-law" },
+      { title: "Copyright Law", href: "/technology-law#copyright-law" },
+      { title: "Data Protection", href: "/technology-law#data-protection" },
+      {
+        title: "Intellectual Property",
+        href: "/technology-law#intellectual-property",
+      },
+      {
+        title: "Technology Contracts",
+        href: "/technology-law#technology-contracts",
+      },
     ],
   },
   {
@@ -61,21 +85,40 @@ const navigationItems = [
   {
     title: "Corporate Law",
     items: [
-      { title: "Contract Law", href: "/contract-law" },
-      { title: "Employment Law", href: "/employment-law" },
-      { title: "Business Formation", href: "/business-formation" },
-      { title: "Corporate Governance", href: "/corporate-governance" },
+      { title: "Contract Law", href: "/corporate-law#contract-law" },
+      { title: "Employment Law", href: "/corporate-law#employment-law" },
+      {
+        title: "Business Formation",
+        href: "/corporate-law#business-formation",
+      },
+      {
+        title: "Corporate Governance",
+        href: "/corporate-law#corporate-governance",
+      },
       { title: "Mergers & Acquisitions", href: "/mergers-acquisitions" },
+      {
+        title: "Construction & Infrastructure Law",
+        href: "/corporate-law#construction-infrastructure",
+      },
     ],
   },
   {
     title: "Other",
     items: [
-      { title: "Tax Law", href: "/tax-law" },
-      { title: "Conveyancing", href: "/" },
-      { title: "Debt Collection", href: "/debt-collection" },
-      { title: "Estate Planning", href: "/estate-planning" },
-      { title: "Immigration Law", href: "/immigration-law" },
+      { title: "Tax Law", href: "/other-legal-services#tax-law" },
+      { title: "Conveyancing", href: "/other-legal-services#conveyancing" },
+      {
+        title: "Debt Collection",
+        href: "/other-legal-services#debt-collection",
+      },
+      {
+        title: "Estate Planning",
+        href: "/other-legal-services#estate-planning",
+      },
+      {
+        title: "Immigration Law",
+        href: "/other-legal-services#immigration-law",
+      },
     ],
   },
 ]
@@ -112,7 +155,7 @@ export function Navbar() {
               <button
                 className={`flex items-center gap-1 py-2 text-sm font-medium whitespace-nowrap ${
                   isScrolled
-                    ? "text-slate-800 hover:text-orange-500"
+                    ? "text-slate-800 hover:text-orange-600"
                     : "text-slate-200 hover:text-white"
                 }`}
               >
@@ -130,7 +173,7 @@ export function Navbar() {
                     <Link
                       key={subIndex}
                       href={subItem.href}
-                      className="block px-4 py-1.5 text-sm text-slate-700 hover:bg-slate-50 hover:text-orange-500 whitespace-nowrap"
+                      className="block px-4 py-1.5 text-sm text-slate-700 hover:bg-slate-50 hover:text-orange-600 whitespace-nowrap"
                     >
                       {subItem.title}
                     </Link>
@@ -148,8 +191,8 @@ export function Navbar() {
                 size="icon"
                 className={`${
                   isScrolled
-                    ? "text-slate-800 hover:text-orange-500"
-                    : "text-white hover:text-orange-500"
+                    ? "text-slate-800 hover:text-orange-600"
+                    : "text-white hover:text-orange-600"
                 } h-8 w-8`}
               >
                 <MapPin className="w-7 h-7" />
@@ -164,13 +207,13 @@ export function Navbar() {
                 <div className="p-2">
                   <Link
                     href="/contact"
-                    className="block w-full p-2 text-left text-sm text-black hover:bg-orange-500 rounded-md transition-colors"
+                    className="block w-full p-2 text-left text-sm text-black hover:bg-orange-600 rounded-md transition-colors"
                   >
                     View on map
                   </Link>
                   <Link
                     href="/contact#directions"
-                    className="block w-full p-2 text-left text-sm text-black hover:bg-orange-500 rounded-md transition-colors"
+                    className="block w-full p-2 text-left text-sm text-black hover:bg-orange-600 rounded-md transition-colors"
                   >
                     Get directions
                   </Link>
@@ -181,13 +224,13 @@ export function Navbar() {
               href="/contact"
               className={`text-xs ${
                 isScrolled
-                  ? "text-slate-600 hover:text-orange-500"
+                  ? "text-slate-600 hover:text-orange-600"
                   : "text-slate-400 hover:text-white"
               } transition-colors`}
             ></Link>
           </div>
           <div className="text-right">
-            <div className="text-orange-500 text-sm font-medium">
+            <div className="text-orange-600 text-sm font-medium">
               0714521136
             </div>
             <div
@@ -201,8 +244,8 @@ export function Navbar() {
           <Button
             className={`text-sm ${
               isScrolled
-                ? "bg-orange-500 hover:bg-orange-600 text-white"
-                : "bg-orange-500 hover:bg-orange-600 text-white"
+                ? "bg-orange-600 hover:bg-orange-600 text-white"
+                : "bg-orange-600 hover:bg-orange-600 text-white"
             }`}
           >
             Free Consultation
@@ -234,7 +277,7 @@ export function Navbar() {
                       <Link
                         key={itemIndex}
                         href={item.href}
-                        className="block text-sm text-slate-600 hover:text-orange-500"
+                        className="block text-sm text-slate-600 hover:text-orange-600"
                       >
                         {item.title}
                       </Link>
@@ -244,12 +287,12 @@ export function Navbar() {
               ))}
               <div className="mt-6 space-y-4">
                 <div className="text-center">
-                  <div className="text-orange-500 text-lg font-medium">
+                  <div className="text-orange-600 text-lg font-medium">
                     0714521136
                   </div>
                   <div className="text-sm text-slate-600">Available 24/7</div>
                 </div>
-                <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white text-sm font-medium rounded-lg transition-all transform hover:scale-105 duration-300 ease-out">
+                <Button className="w-full bg-orange-600 hover:bg-orange-600 text-white text-sm font-medium rounded-lg transition-all transform hover:scale-105 duration-300 ease-out">
                   Free Consultation
                 </Button>
               </div>
