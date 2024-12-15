@@ -10,6 +10,7 @@ import { Logo } from "@/components/ui/logo"
 const navigationItems = [
   {
     title: "Litigation & ADR",
+    href: "/litigation-adr",
     items: [
       { title: "Mediation", href: "/litigation-adr#mediatation" },
       { title: "Arbitration", href: "/litigation-adr#arbitration" },
@@ -75,11 +76,20 @@ const navigationItems = [
   {
     title: "Intellectual Property Law",
     items: [
-      { title: "Patent Law", href: "/patent-law" },
-      { title: "Trademarks", href: "/trademarks" },
-      { title: "Trade Secrets", href: "/trade-secrets" },
-      { title: "Copyright Law", href: "/copyright-law" },
-      { title: "Data Protection", href: "/data-protection" },
+      { title: "Patent Law", href: "/intellectual-property-law#patent-law" },
+      { title: "Trademarks", href: "/intellectual-property-law#trademarks" },
+      {
+        title: "Trade Secrets",
+        href: "/intellectual-property-law#trade-secrets",
+      },
+      {
+        title: "Copyright Law",
+        href: "/intellectual-property-law#copyright-law",
+      },
+      {
+        title: "Data Protection",
+        href: "/intellectual-property-law#data-protection",
+      },
     ],
   },
   {
@@ -105,19 +115,19 @@ const navigationItems = [
   {
     title: "Other",
     items: [
-      { title: "Tax Law", href: "/other-legal-services#tax-law" },
-      { title: "Conveyancing", href: "/other-legal-services#conveyancing" },
+      { title: "Tax Law", href: "/other#tax-law" },
+      { title: "Conveyancing", href: "/other#conveyancing" },
       {
         title: "Debt Collection",
-        href: "/other-legal-services#debt-collection",
+        href: "/other#debt-collection",
       },
       {
         title: "Estate Planning",
-        href: "/other-legal-services#estate-planning",
+        href: "/other#estate-planning",
       },
       {
         title: "Immigration Law",
-        href: "/other-legal-services#immigration-law",
+        href: "/other#immigration-law",
       },
     ],
   },
@@ -136,6 +146,21 @@ export function Navbar() {
       window.removeEventListener("scroll", handleScroll)
     }
   }, [])
+  const handleViewMap = () => {
+    const position: [number, number] = [-1.2636, 36.7172] // Coordinates for PPV8+938 Seniors Apartments uthiru cooperation, Rungiri
+    window.open(
+      `https://www.openstreetmap.org/?mlat=${position[0]}&mlon=${position[1]}#map=15/${position[0]}/${position[1]}`,
+      "_blank"
+    )
+  }
+
+  const handleGetDirections = () => {
+    const position: [number, number] = [-1.2636, 36.7172] // Coordinates for PPV8+938 Seniors Apartments uthiru cooperation, Rungiri
+    window.open(
+      `https://www.openstreetmap.org/directions?engine=osrm_car&route=;${position[0]}%2C${position[1]}`,
+      "_blank"
+    )
+  }
 
   return (
     <header
@@ -195,28 +220,28 @@ export function Navbar() {
                     : "text-white hover:text-orange-600"
                 } h-8 w-8`}
               >
-                <MapPin className="w-7 h-7" />
+                <MapPin className="w-8 h-8" />
               </Button>
               <div className="absolute right-0 top-full bg-white rounded-lg shadow-lg mt-1 w-80 py-2 transition-all duration-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible">
                 <div className="p-4 border-b">
                   <h4 className="font-semibold text-black">Our Location</h4>
                   <p className="text-sm text-slate-800">
-                    Seniors Apartment, Waiyaki Way | Nairobi
+                    Seniors Apartments uthiru cooperation
                   </p>
                 </div>
                 <div className="p-2">
-                  <Link
-                    href="/contact"
-                    className="block w-full p-2 text-left text-sm text-black hover:bg-orange-600 rounded-md transition-colors"
+                  <button
+                    onClick={handleViewMap}
+                    className="block w-full p-2 text-left text-sm text-slate-950 hover:bg-orange-600 rounded-md transition-colors"
                   >
                     View on map
-                  </Link>
-                  <Link
-                    href="/contact#directions"
-                    className="block w-full p-2 text-left text-sm text-black hover:bg-orange-600 rounded-md transition-colors"
+                  </button>
+                  <button
+                    onClick={handleGetDirections}
+                    className="block w-full p-2 text-left text-sm text-slate-950 hover:bg-orange-600 rounded-md transition-colors"
                   >
                     Get directions
-                  </Link>
+                  </button>
                 </div>
               </div>
             </div>

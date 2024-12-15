@@ -33,7 +33,7 @@ export function ArticleCard({ article, onClick }: ArticleCardProps) {
           <span className="text-gray-500 text-sm">{article.date}</span>
           <Button
             variant="link"
-            className="text-orange-500 hover:text-orange-600"
+            className="text-orange-600 hover:text-orange-800"
             onClick={onClick}
           >
             Read More

@@ -52,50 +52,7 @@ export default function CorporateLawPage() {
       <Navbar />
       <section className="py-16 bg-slate-50">
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="max-w-3xl mx-auto space-y-8">
-            <h2 className="text-3xl font-serif font-bold text-slate-900">
-              Our Approach to Corporate Law
-            </h2>
-            <div className="prose prose-lg text-black">
-              <p>
-                At Kenneth Waweru & Company Advocates, we understand the unique
-                challenges faced by businesses in today’s dynamic environment.
-                Our approach is centered on providing strategic and innovative
-                legal solutions tailored to meet the evolving needs of our
-                corporate clients.
-              </p>
-              <p>We offer a full range of corporate law services, including:</p>
-              <ul>
-                <li>
-                  Company formation and registration to help you start your
-                  business on a solid legal foundation.
-                </li>
-                <li>
-                  Corporate compliance and governance to ensure your business
-                  adheres to legal and regulatory requirements.
-                </li>
-                <li>
-                  Drafting and reviewing contracts to protect your interests in
-                  every transaction.
-                </li>
-                <li>
-                  Mergers and acquisitions, providing due diligence and seamless
-                  integration support.
-                </li>
-                <li>
-                  Shareholder agreements and dispute resolution to maintain
-                  harmony within your business.
-                </li>
-              </ul>
-              <p>
-                Our team combines deep legal expertise with a business-focused
-                approach to deliver practical solutions that drive success.
-                Whether you’re a startup or an established corporation, we are
-                committed to supporting your growth and protecting your
-                interests every step of the way.
-              </p>
-            </div>
-          </div>
+          <div className="max-w-3xl mx-auto space-y-8"></div>
         </div>
       </section>
     </PracticeAreaLayout>

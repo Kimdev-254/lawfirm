@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import { motion } from "framer-motion"
+import { Star } from "lucide-react"
 import { ContactForm } from "@/components/contact-form"
 
 interface PracticeAreaLayoutProps {
@@ -54,6 +55,19 @@ export function PracticeAreaLayout({
                   <p className="text-xl text-slate-300 leading-relaxed">
                     {description}
                   </p>
+                  <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm p-4 rounded-lg w-fit">
+                    <div className="flex">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className="w-5 h-5 text-yellow-400 fill-yellow-400"
+                        />
+                      ))}
+                    </div>
+                    <span className="text-white font-medium">
+                      Google Reviews
+                    </span>
+                  </div>
                 </motion.div>
 
                 <ContactForm />

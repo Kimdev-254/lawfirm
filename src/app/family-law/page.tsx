@@ -52,39 +52,7 @@ export default function FamilyLawPage() {
       <Navbar />
       <section className="py-16 bg-slate-50">
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="max-w-3xl mx-auto space-y-8">
-            <h2 className="text-3xl font-serif font-bold text-slate-900">
-              Our Family Law Services
-            </h2>
-            <div className="prose prose-lg text-black">
-              <p>
-                Family law matters require a delicate balance of legal expertise
-                and emotional intelligence. At Kenneth Waweru & Company
-                Advocates, we provide comprehensive family law services with a
-                focus on protecting your interests and those of your loved ones.
-              </p>
-              <p>
-                Our family law practice covers a wide range of services,
-                including:
-              </p>
-              <ul>
-                <li>Divorce and separation proceedings</li>
-                <li>Child custody and support arrangements</li>
-                <li>Adoption legal services</li>
-                <li>Succession planning and estate administration</li>
-                <li>Matrimonial property disputes</li>
-                <li>Prenuptial and postnuptial agreements</li>
-                <li>Domestic violence protection</li>
-              </ul>
-              <p>
-                We understand that family law issues can be emotionally
-                challenging. Our team is committed to providing compassionate,
-                discreet, and effective legal representation to help you
-                navigate these difficult times and achieve the best possible
-                outcomes for you and your family.
-              </p>
-            </div>
-          </div>
+          <div className="max-w-3xl mx-auto space-y-8"> </div>
         </div>
       </section>
     </PracticeAreaLayout>

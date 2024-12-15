@@ -132,40 +132,7 @@ export default function OthersPage() {
         {/* Why Choose Us Section */}
         <section className="py-16 bg-slate-50">
           <div className="container mx-auto px-4 sm:px-6">
-            <div className="max-w-3xl mx-auto space-y-8">
-              <h2 className="text-3xl font-serif font-bold text-slate-900 text-center">
-                Why Choose Us for Your Legal Needs?
-              </h2>
-              <div className="prose prose-lg mx-auto">
-                <p>
-                  At Kenneth Waweru & Company Advocates, we pride ourselves on
-                  offering comprehensive legal solutions tailored to your unique
-                  needs. Our team of experienced attorneys brings a wealth of
-                  knowledge and expertise across various areas of law.
-                </p>
-                <ul>
-                  <li>Personalized attention to every case</li>
-                  <li>
-                    In-depth understanding of East African legal landscape
-                  </li>
-                  <li>
-                    Proven track record of success in diverse legal matters
-                  </li>
-                  <li>
-                    Commitment to clear communication and client education
-                  </li>
-                  <li>
-                    Innovative legal strategies to achieve optimal outcomes
-                  </li>
-                </ul>
-                <p>
-                  Whether you're facing complex tax issues, need assistance with
-                  property transactions, or require guidance on immigration
-                  matters, our dedicated team is here to provide the expert
-                  legal support you deserve.
-                </p>
-              </div>
-            </div>
+            <div className="max-w-3xl mx-auto space-y-8"></div>
           </div>
         </section>
       </main>
