@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Playfair_Display, Cormorant_Garamond } from "next/font/google"
 import "./globals.css"
 import "leaflet/dist/leaflet.css"
+import { Chatbot } from "@/components/chatbot"
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -31,7 +32,10 @@ export default function RootLayout({
       lang="en"
       className={`${playfair.variable} ${cormorant.variable} scroll-smooth`}
     >
-      <body className="bg-slate-950 text-white antialiased">{children}</body>
+      <body className="bg-slate-950 text-white antialiased">
+        {children}
+        <Chatbot />
+      </body>
     </html>
   )
 }
