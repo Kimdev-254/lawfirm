@@ -48,8 +48,8 @@ export function LocationSection() {
   return (
     <section id="visit-our-office" className="py-16 bg-white">
       <div className="container mx-auto px-4 sm:px-6">
-        <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-          Visit our Office
+        <h2 className="text-3xl font-bold font-serif text-slate-950 mb-8 text-center">
+          Visit Us
         </h2>
         <div className="grid md:grid-cols-2 gap-12">
           {/* Left Column - Map */}
