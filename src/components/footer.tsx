@@ -12,19 +12,21 @@ export function Footer() {
       <div className="container mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-lg font-semibold mb-4">About Us</h3>
-            <p className="text-slate-300">
+            <h3 className="text-lg font-semibold font-serif mb-4">About Us</h3>
+            <p className="text-slate-300 font-serif">
               Kenneth Waweru & Company Advocates is a leading law firm providing
               expert legal services across East Africa.
             </p>
           </div>
           <div>
-            <h3 className="text-lg font-semibold mb-4">Practice Areas</h3>
+            <h3 className="text-lg font-semibold mb-4 font-serif">
+              Practice Areas
+            </h3>
             <ul className="space-y-2">
               <li>
                 <Link
                   href="/litigation-adr"
-                  className="text-slate-300 hover:text-white"
+                  className="text-slate-300 hover:text-orangee-600"
                 >
                   Litigation & ADR
                 </Link>
@@ -32,7 +34,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/family-law"
-                  className="text-slate-300 hover:text-white"
+                  className="text-slate-300 hover:text-orangee-600"
                 >
                   Family Law
                 </Link>
@@ -40,7 +42,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/corporate-law"
-                  className="text-slate-300 hover:text-white"
+                  className="text-slate-300 hover:text-orangee-600"
                 >
                   Corporate Law
                 </Link>
@@ -48,7 +50,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/technology-law"
-                  className="text-slate-300 hover:text-white"
+                  className="text-slate-300 hover:text-orangee-600"
                 >
                   Technology Law
                 </Link>
@@ -56,7 +58,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/other-legal-services"
-                  className="text-slate-300 hover:text-white"
+                  className="text-slate-300 hover:text-orangee-600"
                 >
                   Other Legal Services
                 </Link>
@@ -64,7 +66,9 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
+            <h3 className="text-lg font-semibold font-serif mb-4">
+              Contact Us
+            </h3>
             <p className="text-slate-300">Seniors Apartment, Waiyaki Way</p>
             <p className="text-slate-300">Nairobi, Kenya</p>
             <p className="text-slate-300">Phone: 0714521136</p>
@@ -75,16 +79,16 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
             <div className="flex space-x-4">
-              <a href="#" className="text-slate-300 hover:text-white">
+              <a href="#" className="text-slate-300 hover:text-orangee-600">
                 <Facebook />
               </a>
-              <a href="#" className="text-slate-300 hover:text-white">
+              <a href="#" className="text-slate-300 hover:text-orangee-600">
                 <Twitter />
               </a>
-              <a href="#" className="text-slate-300 hover:text-white">
+              <a href="#" className="text-slate-300 hover:text-orangee-600">
                 <LinkedIn />
               </a>
-              <a href="#" className="text-slate-300 hover:text-white">
+              <a href="#" className="text-slate-300 hover:text-orangee-600">
                 <Instagram />
               </a>
             </div>
