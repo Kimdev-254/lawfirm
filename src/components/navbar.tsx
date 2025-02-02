@@ -170,7 +170,7 @@ export function Navbar() {
           : "bg-slate-950 text-white py-3"
       }`}
     >
-      <nav className="container mx-auto px-4 flex items-center justify-between">
+      <nav className="container mx-auto px-1 flex items-center justify-between">
         <Link href="/" className="flex items-center">
           <Logo className={isScrolled ? "text-slate-900" : "text-white"} />
         </Link>
