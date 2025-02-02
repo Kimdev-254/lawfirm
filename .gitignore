@@ -140,3 +140,17 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+venv/
+legal_bert_env/
+
+# Environment variables
+.env
+.env.local
+
+# Next.js build output
+.next/
