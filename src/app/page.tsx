@@ -44,7 +44,7 @@ export default function Home() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8 }}
                 >
-                  Kenneth Waweru & Company Advocates LTD
+                  Kenneth Waweru & Company Advocates
                 </motion.h1>
                 <motion.p
                   className="text-2xl font-semibold text-orange-500 font-cormorant h-8"
