@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { Playfair_Display, Cormorant_Garamond } from "next/font/google"
-import "./globals.css"
 import "leaflet/dist/leaflet.css"
+import "./globals.css"
 import { Chatbot } from "@/components/chatbot"
 
 const playfair = Playfair_Display({
