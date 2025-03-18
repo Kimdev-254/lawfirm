@@ -82,7 +82,6 @@ export function ContactForm() {
         className="space-y-4 bg-white p-6 rounded-lg shadow-lg max-w-4xl mx-auto text-slate-700"
       >
         <h2 className="text-2xl font-semibold font-serif text-center mb-2">
-          {/* Request a Free Case Review */}
           Get Free Consultation
         </h2>
         <p className="text-center text-sm mb-4">
