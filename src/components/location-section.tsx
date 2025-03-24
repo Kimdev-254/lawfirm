@@ -1,148 +1,101 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import "leaflet/dist/leaflet.css"
-import L from "leaflet"
-
-// Fix for default marker icon
-delete (L.Icon.Default.prototype as any)._getIconUrl
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: "/images/marker-icon-2x.png",
-  iconUrl: "/images/marker-icon.png",
-  shadowUrl: "/images/marker-shadow.png",
-})
+import { useState } from "react";
+import Link from "next/link";
+import { PhoneCall, MapPin, Clock, Copy, Navigation } from "lucide-react";
 
 export function LocationSection() {
-  const [isMounted, setIsMounted] = useState(false)
-  const position: [number, number] = [-1.2636, 36.7172] // Coordinates for PPV8+938 Seniors Apartments uthiru cooperation, Rungiri
-  const address = "PPV8+938 Seniors Apartments uthiru cooperation, Rungiri"
+  const position = "-1.108732132958032,36.63725937038771"; // Updated coordinates for Kimuchu Complex Building
+  const address = "Kimuchu Complex Building, 4th Floor";
+  const phoneNumber = "0714521136";
+  const [copied, setCopied] = useState(false);
 
-  useEffect(() => {
-    setIsMounted(true)
-  }, [])
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    // Add form submission logic here
-  }
-
-  const handleViewLargerMap = () => {
-    window.open(
-      `https://www.openstreetmap.org/?mlat=${position[0]}&mlon=${position[1]}#map=15/${position[0]}/${position[1]}`,
-      "_blank"
-    )
-  }
-
-  const handleGetDirections = () => {
-    window.open(
-      `https://www.openstreetmap.org/directions?engine=osrm_car&route=;${position[0]}%2C${position[1]}`,
-      "_blank"
-    )
-  }
+  const copyPhoneNumber = () => {
+    navigator.clipboard.writeText(phoneNumber);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   return (
-    <section id="visit-our-office" className="py-16 bg-white">
-      <div className="container mx-auto px-4 sm:px-6">
-        <h2 className="text-3xl font-bold font-serif text-slate-950 mb-8 text-center">
-          Visit Us
+    <section id="our-office-location" className="py-16 bg-slate-900 text-gray-900">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-12">
+        {/* Section Title */}
+        <h2 className="text-3xl font-bold text-orange-500 text-center mb-8">
+          Our Office Location
         </h2>
+        
         <div className="grid md:grid-cols-2 gap-12">
-          {/* Left Column - Map */}
-          <div className="space-y-6">
-            <div className="h-[300px] md:h-[400px] rounded border border-slate-200 overflow-hidden">
-              {isMounted && (
-                <MapContainer
-                  center={position}
-                  zoom={15}
-                  style={{ height: "100%", width: "100%" }}
-                  zoomControl={false}
-                >
-                  <TileLayer
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                  />
-                  <Marker position={position}>
-                    <Popup>
-                      Kenneth Waweru & Company Advocates
-                      <br />
-                      {address}
-                    </Popup>
-                  </Marker>
-                </MapContainer>
-              )}
-            </div>
-            <p className="text-sm text-slate-600">{address}</p>
-            <div className="flex space-x-4">
-              <Button
-                onClick={handleViewLargerMap}
-                variant="outline"
-                className="flex-1"
-              >
-                View Larger Map
-              </Button>
-              <Button
-                onClick={handleGetDirections}
-                variant="outline"
-                className="flex-1"
-              >
-                Get Directions
-              </Button>
+          {/* Contact Details */}
+          <div className="bg-white p-6 rounded-lg shadow-lg">
+            <div className="space-y-6">
+              {/* Call Us */}
+              <div className="flex items-center space-x-4">
+                <PhoneCall size={24} className="text-orange-500" />
+                <div>
+                  <h3 className="text-lg font-semibold">Call Us</h3>
+                  <p className="text-gray-600">{phoneNumber}</p>
+                  <button
+                    onClick={copyPhoneNumber}
+                    className="text-sm text-gray-500 hover:text-gray-700 flex items-center"
+                  >
+                    <Copy size={16} className="mr-1" />
+                    {copied ? "Copied!" : "Copy Number"}
+                  </button>
+                  <p className="text-sm text-gray-600 mt-1">
+                    <span className="font-semibold text-orange-500">Call us for an appointment</span>
+                  </p>
+                </div>
+              </div>
+
+              {/* Location */}
+              <div className="flex items-center space-x-4">
+                <MapPin size={24} className="text-orange-500" />
+                <div>
+                  <h3 className="text-lg font-semibold">Location</h3>
+                  <p className="text-gray-600">{address}</p>
+                  <Link
+                    href={`https://maps.google.com/?q=${position}`}
+                    target="_blank"
+                    className="text-orange-500 hover:underline text-sm"
+                  >
+                    View on Google Maps
+                  </Link>
+                  <Link
+                    href={`https://www.google.com/maps/dir/?api=1&destination=${position}`}
+                    target="_blank"
+                    className="mt-2 bg-orange-500 text-white text-sm px-3 py-1.5 rounded-md hover:bg-orange-600 transition flex items-center w-max"
+                  >
+                    <Navigation size={16} className="mr-1" /> Get Directions
+                  </Link>
+                </div>
+              </div>
+
+              {/* Business Hours */}
+              <div className="flex items-center space-x-4">
+                <Clock size={24} className="text-orange-500" />
+                <div>
+                  <h3 className="text-lg font-semibold">Business Hours</h3>
+                  <p className="text-gray-600">
+                    Mon - Fri: <span className="font-semibold">8 AM - 4 PM</span>
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Right Column - Contact Form */}
-          <div className="space-y-6">
-            <h3 className="text-2xl font-bold text-slate-900">Get in touch!</h3>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="space-y-2">
-                <Label htmlFor="name" className="sr-only">
-                  Name
-                </Label>
-                <Input
-                  id="name"
-                  placeholder="Enter your Name"
-                  className="w-full border-slate-300 focus:border-slate-500 focus:ring-slate-500"
-                  required
-                />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="email" className="sr-only">
-                  Email
-                </Label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="Enter a valid email address"
-                  className="w-full border-slate-300 focus:border-slate-500 focus:ring-slate-500"
-                  required
-                />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="message" className="sr-only">
-                  Message
-                </Label>
-                <Textarea
-                  id="message"
-                  placeholder="Enter your message"
-                  className="w-full min-h-[100px] md:min-h-[150px] border-slate-300 focus:border-slate-500 focus:ring-slate-500"
-                  required
-                />
-              </div>
-              <Button
-                type="submit"
-                className="w-full bg-slate-900 hover:bg-slate-800 text-white"
-              >
-                Submit
-              </Button>
-            </form>
+          {/* Google Maps Embed */}
+          <div className="overflow-hidden shadow-lg rounded-lg">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.0713255475653!2d36.63725937038771!3d-1.108732132958032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f2773dd82ed11%3A0x92f4c2e4fd88ea33!2sKimuchu%20Complex%20Building!5e0!3m2!1sen!2ske!4v1742847869421!5m2!1sen!2ske"
+              width="100%"
+              height="400"
+              style={{ border: "none" }}
+              allowFullScreen
+              loading="lazy"
+            ></iframe>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
