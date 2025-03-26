@@ -5,7 +5,7 @@ import Link from "next/link";
 import { PhoneCall, MapPin, Clock, Copy, Navigation } from "lucide-react";
 
 export function LocationSection() {
-  const position = "-1.108732132958032,36.63725937038771"; // Updated coordinates for Kimuchu Complex Building
+  const position = "-1.108732132958032,36.63725937038771"; 
   const address = "Kimuchu Complex Building, 4th Floor";
   const phoneNumber = "0714521136";
   const [copied, setCopied] = useState(false);
@@ -17,10 +17,10 @@ export function LocationSection() {
   };
 
   return (
-    <section id="our-office-location" className="py-16 bg-slate-900 text-gray-900">
+    <section id="our-office-location" className="py-16 bg-slate-200 text-gray-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-12">
         {/* Section Title */}
-        <h2 className="text-3xl font-bold text-orange-500 text-center mb-8">
+        <h2 className="text-3xl md:text-4xl font-serif font-bold text-center text-slate-900 mb-12">
           Our Office Location
         </h2>
         
@@ -30,7 +30,7 @@ export function LocationSection() {
             <div className="space-y-6">
               {/* Call Us */}
               <div className="flex items-center space-x-4">
-                <PhoneCall size={24} className="text-orange-500" />
+                <PhoneCall size={24} className="text-orange-600" />
                 <div>
                   <h3 className="text-lg font-semibold">Call Us</h3>
                   <p className="text-gray-600">{phoneNumber}</p>
@@ -42,28 +42,28 @@ export function LocationSection() {
                     {copied ? "Copied!" : "Copy Number"}
                   </button>
                   <p className="text-sm text-gray-600 mt-1">
-                    <span className="font-semibold text-orange-500">Call us for an appointment</span>
+                    <span className="font-semibold text-orange-600">Call us for an appointment</span>
                   </p>
                 </div>
               </div>
 
               {/* Location */}
               <div className="flex items-center space-x-4">
-                <MapPin size={24} className="text-orange-500" />
+                <MapPin size={24} className="text-orange-600" />
                 <div>
                   <h3 className="text-lg font-semibold">Location</h3>
                   <p className="text-gray-600">{address}</p>
                   <Link
                     href={`https://maps.google.com/?q=${position}`}
                     target="_blank"
-                    className="text-orange-500 hover:underline text-sm"
+                    className="text-orange-600 hover:underline text-sm"
                   >
                     View on Google Maps
                   </Link>
                   <Link
                     href={`https://www.google.com/maps/dir/?api=1&destination=${position}`}
                     target="_blank"
-                    className="mt-2 bg-orange-500 text-white text-sm px-3 py-1.5 rounded-md hover:bg-orange-600 transition flex items-center w-max"
+                    className="mt-2 bg-orange-600 text-white text-sm px-3 py-1.5 rounded-md hover:bg-orange-700 transition flex items-center w-max"
                   >
                     <Navigation size={16} className="mr-1" /> Get Directions
                   </Link>
@@ -72,7 +72,7 @@ export function LocationSection() {
 
               {/* Business Hours */}
               <div className="flex items-center space-x-4">
-                <Clock size={24} className="text-orange-500" />
+                <Clock size={24} className="text-orange-600" />
                 <div>
                   <h3 className="text-lg font-semibold">Business Hours</h3>
                   <p className="text-gray-600">
