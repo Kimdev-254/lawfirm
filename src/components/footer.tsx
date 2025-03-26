@@ -69,9 +69,10 @@ export function Footer() {
             <h3 className="text-lg font-semibold font-serif mb-4">
               Contact Us
             </h3>
-            <p className="text-slate-300">Seniors Apartment, Waiyaki Way</p>
-            <p className="text-slate-300">Nairobi, Kenya</p>
+            <p className="text-slate-300">Kimuchu Building 4floor</p>
+            <p className="text-slate-300">Limuru, Kenya</p>
             <p className="text-slate-300">Phone: 0714521136</p>
+            <p className="text-slate-300">P.O BOX 14309-0400</p>
             <p className="text-slate-300">
               Email: wawerulawadvocates@gmail.com
             </p>
@@ -85,7 +86,7 @@ export function Footer() {
               <a href="#" className="text-slate-300 hover:text-orangee-600">
                 <Twitter />
               </a>
-              <a href="#" className="text-slate-300 hover:text-orangee-600">
+              <a href="https://www.linkedin.com/in/kenneth-waweru-advocates-ab868533a/" className="text-slate-300 hover:text-orangee-600">
                 <LinkedIn />
               </a>
               <a href="#" className="text-slate-300 hover:text-orangee-600">
