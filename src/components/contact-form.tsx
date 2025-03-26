@@ -21,6 +21,7 @@ interface FormData {
   phone: string;
   email: string;
   incidentLocation: string;
+  subject: string;
   message: string;
 }
 
@@ -31,6 +32,7 @@ export function ContactForm() {
     phone: "",
     email: "",
     incidentLocation: "",
+    subject: "",
     message: "",
   });
 
@@ -70,6 +72,7 @@ export function ContactForm() {
           phone: "",
           email: "",
           incidentLocation: "",
+          subject: "",
           message: "",
         });
       } else {
@@ -83,7 +86,7 @@ export function ContactForm() {
       }, 4000);
     } catch (error) {
       console.error("Form submission error:", error);
-      setResponseMessage("❌ Network error! Please call us instead.");
+      setResponseMessage("Network error! Please call us instead.");
       setMessageType("error");
       setShowMessage(true);
       setTimeout(() => {
@@ -177,7 +180,7 @@ export function ContactForm() {
                 id="email"
                 name="email"
                 type="email"
-                placeholder="info@gmail.com"
+                placeholder="example@gmail.com"
                 value={formData.email}
                 onChange={handleChange}
                 required
@@ -205,6 +208,17 @@ export function ContactForm() {
                 <SelectItem value="somalia">Somalia</SelectItem>
               </SelectContent>
             </Select>
+          </div>
+          <div>
+            <Label htmlFor="subject">Subject</Label>
+            <Input
+              id="subject"
+              name="subject"
+              type="text"
+              placeholder="Subject"
+              value={formData.subject}
+              onChange={handleChange}
+            />
           </div>
 
           <div>
