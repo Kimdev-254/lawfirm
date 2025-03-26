@@ -4,6 +4,7 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 import { Star } from "lucide-react"
 import { ContactForm } from "@/components/contact-form"
+import { Navbar } from "./navbar"
 
 interface PracticeAreaLayoutProps {
   title: string
@@ -26,14 +27,15 @@ export function PracticeAreaLayout({
 }: PracticeAreaLayoutProps) {
   return (
     <div className="min-h-screen bg-slate-950">
+      <Navbar/>
       <main>
         {/* Hero Section */}
         <section className="relative pt-32 pb-16 md:pt-40 md:pb-24">
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/30 z-10" />
             <Image
-              src={image}
-              alt={title}
+              src="/herobg.webp"
+              alt="area background"
               fill
               className="object-cover"
               priority
@@ -42,13 +44,14 @@ export function PracticeAreaLayout({
 
           <div className="container mx-auto px-4 sm:px-6 relative z-20">
             <div className="grid lg:grid-cols-2 gap-12 items-start">
-              <div className="space-y-8">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8 }}
-                  className="space-y-6"
-                >
+              {/* Left Column - Content */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="space-y-8"
+              >
+                <div className="space-y-6">
                   <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-white leading-tight">
                     {title}
                   </h1>
@@ -68,10 +71,18 @@ export function PracticeAreaLayout({
                       Google Reviews
                     </span>
                   </div>
-                </motion.div>
+                </div>
+              </motion.div>
 
+              {/* Right Column - Contact Form */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="lg:sticky lg:top-24"
+              >
                 <ContactForm />
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
