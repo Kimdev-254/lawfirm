@@ -73,3 +73,12 @@ html {
     transform: translateY(0);
   }
 }
+
+svg {
+  --partial-fill: 80%;
+}
+
+#partialFill {
+  --stop-color: currentColor;
+  --stop-opacity: 1;
+}
