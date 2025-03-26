@@ -31,7 +31,7 @@ export function WhyChooseUs() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      className="py-16 md:py-24 bg-white"
+      className="py-16 md:py-24 bg-slate-900"
     >
       <div className="container mx-auto px-4 sm:px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -41,11 +41,11 @@ export function WhyChooseUs() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="grid grid-cols-2 grid-rows-2 gap-4 h-[350px] md:h-[450px] lg:h-[500px]"
+            className="grid grid-cols-2 gap-4 h-full"
           >
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="relative row-span-2 rounded-lg overflow-hidden shadow-lg"
+              className="relative row-span-2 rounded-lg overflow-hidden shadow-lg h-[350px] md:h-[450px] lg:h-[500px]"
             >
               <Image
                 src="/lawyer.webp"
@@ -54,28 +54,30 @@ export function WhyChooseUs() {
                 className="object-cover transition-transform duration-500"
               />
             </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="relative rounded-lg overflow-hidden shadow-lg"
-            >
-              <Image
-                src="/mm.jpg"
-                alt="Our Legal Team"
-                fill
-                className="object-cover transition-transform duration-500"
-              />
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="relative rounded-lg overflow-hidden shadow-lg"
-            >
-              <Image
-                src="/experience.jpg"
-                alt="Our Office"
-                fill
-                className="object-cover transition-transform duration-500"
-              />
-            </motion.div>
+            <div className="flex flex-col gap-4">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="relative rounded-lg overflow-hidden shadow-lg h-[170px] md:h-[220px] lg:h-[245px]"
+              >
+                <Image
+                  src="/mm.webp"
+                  alt="Our Legal Team"
+                  fill
+                  className="object-cover transition-transform duration-500"
+                />
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="relative rounded-lg overflow-hidden shadow-lg h-[170px] md:h-[220px] lg:h-[245px]"
+              >
+                <Image
+                  src="/experience.webp"
+                  alt="Our Office"
+                  fill
+                  className="object-cover transition-transform duration-500"
+                />
+              </motion.div>
+            </div>
           </motion.div>
 
           {/* Why Choose Us Section */}
@@ -86,7 +88,7 @@ export function WhyChooseUs() {
             viewport={{ once: true }}
             className="space-y-8"
           >
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-slate-900">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-white">
               Why Choose Kenneth Waweru & Company Advocates
             </h2>
             <div className="space-y-6">
@@ -104,15 +106,15 @@ export function WhyChooseUs() {
                     transition={{ type: "spring", stiffness: 300 }}
                     className="flex-shrink-0"
                   >
-                    <div className="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-full bg-slate-200 flex items-center justify-center">
                       <reason.icon className="w-6 h-6 text-orange-600" />
                     </div>
                   </motion.div>
                   <div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-2">
+                    <h3 className="text-xl font-bold text-orange-600 mb-2">
                       {reason.title}
                     </h3>
-                    <p className="text-slate-600">{reason.description}</p>
+                    <p className="text-slate-200">{reason.description}</p>
                   </div>
                 </motion.div>
               ))}
