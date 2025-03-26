@@ -3,7 +3,7 @@ import nodemailer from "nodemailer";
 
 export async function POST(req: Request) {
   try {
-    const { firstName, lastName, phone, email, incidentLocation, message } = await req.json();
+    const { firstName, lastName, phone, email, incidentLocation, subject,message } = await req.json();
 
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
@@ -16,7 +16,7 @@ export async function POST(req: Request) {
     });
 
     const mailOptions = {
-      from: process.env.SMTP_EMAIL, // Sender (your Gmail)
+      from: email, // Sender (your Gmail)
       to: process.env.SMTP_EMAIL, // Recipient (your Gmail or another email)
       replyTo: email, 
       subject: "New Contact Form Submission",
@@ -24,6 +24,8 @@ export async function POST(req: Request) {
        Phone: ${phone}
        Email: ${email}
        Location: ${incidentLocation}
+       
+       Subject: ${subject}
 
        Message:
       ${message}`,
