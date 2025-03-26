@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react"
 import Link from "next/link"
 import { ChevronDown, MapPin, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
 import { Logo } from "@/components/ui/logo"
 
 const navigationItems = [
@@ -15,14 +15,8 @@ const navigationItems = [
       { title: "Mediation", href: "/litigation-adr#mediatation" },
       { title: "Arbitration", href: "/litigation-adr#arbitration" },
       { title: "Civil Litigation", href: "/litigation-adr#civil-litigation" },
-      {
-        title: "Criminal Litigation",
-        href: "/litigation-adr#criminal-litigation",
-      },
-      {
-        title: "Commercial Litigation",
-        href: "/litigation-adr#commercial-litigation",
-      },
+      { title: "Criminal Litigation", href: "/litigation-adr#criminal-litigation" },
+      { title: "Commercial Litigation", href: "/litigation-adr#commercial-litigation" },
     ],
   },
   {
@@ -32,10 +26,7 @@ const navigationItems = [
       { title: "Adoption", href: "/family-law#adoption" },
       { title: "Succession", href: "/family-law#succession" },
       { title: "Child Custody", href: "/family-law#child-custody" },
-      {
-        title: "Matrimonial Property",
-        href: "/family-law#matrimonial-property",
-      },
+      { title: "Matrimonial Property", href: "/family-law#matrimonial-property" },
     ],
   },
   {
@@ -43,53 +34,19 @@ const navigationItems = [
     items: [
       { title: "Car Accidents", href: "/personal-injury#car-accidents" },
       { title: "Wrongful Death", href: "/personal-injury#wrongful-death" },
-      {
-        title: "Product Liability",
-        href: "/personal-injury#product-liability",
-      },
-      {
-        title: "Workplace Injuries",
-        href: "/personal-injury#workplace-injuries",
-      },
-      {
-        title: "Medical Malpractice",
-        href: "/personal-injury#medical-malpractice",
-      },
+      { title: "Product Liability", href: "/personal-injury#product-liability" },
+      { title: "Workplace Injuries", href: "/personal-injury#workplace-injuries" },
+      { title: "Medical Malpractice", href: "/personal-injury#medical-malpractice" },
     ],
   },
   {
     title: "Technology Law",
     items: [
-      { title: "Patent Law", href: "/technology-law#patent-law" },
-      { title: "Copyright Law", href: "/technology-law#copyright-law" },
-      { title: "Data Protection", href: "/technology-law#data-protection" },
-      {
-        title: "Intellectual Property",
-        href: "/technology-law#intellectual-property",
-      },
-      {
-        title: "Technology Contracts",
-        href: "/technology-law#technology-contracts",
-      },
-    ],
-  },
-  {
-    title: "Intellectual Property Law",
-    items: [
-      { title: "Patent Law", href: "/intellectual-property-law#patent-law" },
-      { title: "Trademarks", href: "/intellectual-property-law#trademarks" },
-      {
-        title: "Trade Secrets",
-        href: "/intellectual-property-law#trade-secrets",
-      },
-      {
-        title: "Copyright Law",
-        href: "/intellectual-property-law#copyright-law",
-      },
-      {
-        title: "Data Protection",
-        href: "/intellectual-property-law#data-protection",
-      },
+      { title: "Data Privacy", href: "/technology-law#patent-law" },
+      { title: "E-Commerce", href: "/technology-law#copyright-law" },
+      { title: "Cyber Security", href: "/technology-law#data-protection" },
+      { title: "Intellectual Property", href: "/technology-law#intellectual-property" },
+      { title: "Technology Contracts", href: "/technology-law#technology-contracts" },
     ],
   },
   {
@@ -97,38 +54,20 @@ const navigationItems = [
     items: [
       { title: "Contract Law", href: "/corporate-law#contract-law" },
       { title: "Employment Law", href: "/corporate-law#employment-law" },
-      {
-        title: "Business Formation",
-        href: "/corporate-law#business-formation",
-      },
-      {
-        title: "Corporate Governance",
-        href: "/corporate-law#corporate-governance",
-      },
+      { title: "Business Formation", href: "/corporate-law#business-formation" },
+      { title: "Corporate Governance", href: "/corporate-law#corporate-governance" },
       { title: "Mergers & Acquisitions", href: "/mergers-acquisitions" },
-      {
-        title: "Construction & Infrastructure Law",
-        href: "/corporate-law#construction-infrastructure",
-      },
+      { title: "Construction & Infrastructure Law", href: "/corporate-law#construction-infrastructure" },
     ],
   },
   {
-    title: "Other",
+    title: "Other Areas",
     items: [
-      { title: "Tax Law", href: "/other#tax-law" },
-      { title: "Conveyancing", href: "/other#conveyancing" },
-      {
-        title: "Debt Collection",
-        href: "/other#debt-collection",
-      },
-      {
-        title: "Estate Planning",
-        href: "/other#estate-planning",
-      },
-      {
-        title: "Immigration Law",
-        href: "/other#immigration-law",
-      },
+      { title: "Tax Law", href: "/other-areas#tax-law" },
+      { title: "Conveyancing", href: "/other-areas#conveyancing" },
+      { title: "Debt Collection", href: "/other-areas#debt-collection" },
+      { title: "Estate Planning", href: "/other-areas#estate-planning" },
+      { title: "Immigration Law", href: "/other-areas#immigration-law" },
     ],
   },
 ]
@@ -146,25 +85,30 @@ export function Navbar() {
       window.removeEventListener("scroll", handleScroll)
     }
   }, [])
+
+  const position = {
+    lat: "-1.108732132958032",
+    lng: "36.63725937038771"
+  };
+  const address = "Kimuchu Complex Building, 4th Floor";
+
   const handleViewMap = () => {
-    const position: [number, number] = [-1.2636, 36.7172] // Coordinates for PPV8+938 Seniors Apartments uthiru cooperation, Rungiri
     window.open(
-      `https://www.openstreetmap.org/?mlat=${position[0]}&mlon=${position[1]}#map=15/${position[0]}/${position[1]}`,
-      "_blank"
-    )
-  }
+      `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`,
+      '_blank'
+    );
+  };
 
   const handleGetDirections = () => {
-    const position: [number, number] = [-1.2636, 36.7172] // Coordinates for PPV8+938 Seniors Apartments uthiru cooperation, Rungiri
     window.open(
-      `https://www.openstreetmap.org/directions?engine=osrm_car&route=;${position[0]}%2C${position[1]}`,
-      "_blank"
-    )
-  }
+      `https://www.google.com/maps/dir/?api=1&destination=${position.lat},${position.lng}&destination_place_id=${encodeURIComponent(address)}`,
+      '_blank'
+    );
+  };
 
   return (
     <header
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      className={`fixed top-0 w-full z-40 transition-all duration-300 ${
         isScrolled
           ? "bg-white shadow-md text-black py-2"
           : "bg-slate-950 text-white py-3"
@@ -177,23 +121,20 @@ export function Navbar() {
         <div className="hidden lg:flex items-center space-x-3">
           {navigationItems.map((item, index) => (
             <div key={index} className="relative group">
-              <button
+              <Link
+                href={item.href || `/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
                 className={`flex items-center gap-1 py-2 text-sm font-medium whitespace-nowrap ${
                   isScrolled
                     ? "text-slate-800 hover:text-orange-600"
-                    : "text-slate-200 hover:text-white"
+                    : "text-slate-200 hover:text-orange-600"
                 }`}
               >
-                {item.title}{" "}
+                {item.title}
                 <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
-              </button>
+              </Link>
               <div className="absolute left-0 top-full hidden group-hover:block bg-white rounded-lg shadow-lg mt-1 w-72 py-2 transition-all duration-200 opacity-0 group-hover:opacity-100">
                 <div className="absolute h-4 -top-4 left-0 right-0" />
-                <div
-                  className={`${
-                    item.items.length > 4 ? "grid grid-cols-1 gap-x-2" : ""
-                  }`}
-                >
+                <div className={`${item.items.length > 4 ? "grid grid-cols-1 gap-x-2" : ""}`}>
                   {item.items.map((subItem, subIndex) => (
                     <Link
                       key={subIndex}
@@ -226,7 +167,7 @@ export function Navbar() {
                 <div className="p-4 border-b">
                   <h4 className="font-semibold text-black">Our Location</h4>
                   <p className="text-sm text-slate-800">
-                    Seniors Apartments uthiru cooperation
+                    Kimuchu Complex Building 4floor
                   </p>
                 </div>
                 <div className="p-2">
@@ -282,7 +223,9 @@ export function Navbar() {
               variant="outline"
               size="icon"
               className={`lg:hidden ${
-                isScrolled ? "border-slate-200" : "border-slate-700"
+                isScrolled 
+                  ? "border-slate-300 bg-white text-slate-950" 
+                  : "border-slate-700 text-white hover:bg-slate-800"
               }`}
             >
               {isMobileMenuOpen ? (
@@ -292,17 +235,30 @@ export function Navbar() {
               )}
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-            <nav className="flex flex-col gap-4 mt-8">
+          <SheetContent 
+            side="right" 
+            className="w-[300px] sm:w-[400px] overflow-y-auto max-h-screen"
+          >
+            <SheetTitle className="text-xl font-bold text-slate-500 mb-6">
+              Areas of Practice
+            </SheetTitle>
+            <nav className="flex flex-col gap-4">
               {navigationItems.map((section, index) => (
-                <div key={index} className="space-y-3">
-                  <div className="font-semibold text-lg">{section.title}</div>
-                  <div className="pl-4 space-y-2">
+                <div key={index} className="border-b border-slate-200 pb-4 last:border-0">
+                  <Link
+                    href={section.href || `/${section.title.toLowerCase().replace(/\s+/g, '-')}`}
+                    className="font-semibold text-lg text-orange-800 hover:text-orange-600 transition-colors block mb-3"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {section.title}
+                  </Link>
+                  <div className="grid gap-1">
                     {section.items.map((item, itemIndex) => (
                       <Link
                         key={itemIndex}
                         href={item.href}
-                        className="block text-sm text-slate-600 hover:text-orange-600"
+                        className="px-2 py-1.5 text-sm text-slate-300 hover:text-orange-600 hover:bg-orange-50 rounded-md transition-colors"
+                        onClick={() => setIsMobileMenuOpen(false)}
                       >
                         {item.title}
                       </Link>
@@ -310,19 +266,22 @@ export function Navbar() {
                   </div>
                 </div>
               ))}
-              <div className="mt-6 space-y-4">
-                <div className="text-center">
-                  <div className="text-orange-600 text-lg font-medium">
-                    0714521136
-                  </div>
-                  <div className="text-sm text-slate-600">Available 24/7</div>
-                </div>
-                <Button className="w-full bg-orange-600 hover:bg-orange-600 text-white text-sm font-medium rounded-lg transition-all transform hover:scale-105 duration-300 ease-out">
-                  Free Consultation
-                </Button>
-              </div>
             </nav>
-          </SheetContent>
+            <div className="mt-8 border-t border-slate-200 pt-4">
+              <div className="text-sm font-medium text-orange-600 mb-1">
+                Need Assistance?
+              </div>
+              <div className="text-sm text-slate-600 mb-4">
+                Call us 24/7: 0714521136
+              </div>
+              <Button 
+                className="w-full bg-orange-600 text-white hover:bg-orange-700"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Free Consultation
+              </Button>
+            </div>
+          </SheetContent> 
         </Sheet>
       </nav>
     </header>
