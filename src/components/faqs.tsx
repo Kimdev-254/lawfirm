@@ -35,9 +35,9 @@ export function FAQs() {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-gray-100">
+    <section className="py-16 md:py-24 bg-slate-900">
       <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
-        <h2 className="text-3xl md:text-4xl font-serif font-bold text-slate-900 text-center mb-10">
+        <h2 className="text-3xl md:text-4xl font-serif font-bold text-slate-200 text-center mb-10">
           Frequently Asked Questions
         </h2>
         <div className="space-y-4">
