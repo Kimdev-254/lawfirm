@@ -13,31 +13,31 @@ const caseTypes = [
     title: "Mediation",
     description:
       "Facilitating mutually beneficial resolutions through expert mediation services.",
-    image: "/images/mediation.jpg",
+    image: "/mediation.webp",
   },
   {
     title: "Arbitration",
     description:
       "Representing clients in binding arbitration proceedings across various industries.",
-    image: "/images/arbitration.jpg",
+    image: "/arbitration.webp",
   },
   {
     title: "Civil Litigation",
     description:
       "Comprehensive representation in civil disputes, from pre-trial negotiations to courtroom advocacy.",
-    image: "/images/civil-litigation.jpg",
+    image: "/civil-litigation.webp",
   },
   {
     title: "Criminal Litigation",
     description:
       "Skilled defense in criminal proceedings, protecting your rights at every stage of the legal process.",
-    image: "/images/criminal-litigation.jpg",
+    image: "/criminal-litigation.webp",
   },
   {
     title: "Commercial Litigation",
     description:
       "Resolving complex business disputes with strategic legal approaches tailored to your objectives.",
-    image: "/images/commercial-litigation.jpg",
+    image: "/commercial-litigation.webp",
   },
 ]
 
@@ -46,11 +46,11 @@ export default function LitigationADRPage() {
     <PracticeAreaLayout
       title="Litigation & Alternative Dispute Resolution"
       description="At Kenneth Waweru & Company Advocates, we offer comprehensive litigation and ADR services. Our experienced team provides skilled representation in mediation, arbitration, and all forms of litigation across East Africa."
-      image="/herobg.jpg"
+      image="/herobg.webp"
       caseTypes={caseTypes}
     >
       <Navbar />
-      <section className="py-16 bg-slate-50">
+      <section className="py-16 bg-slate-900">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-3xl mx-auto space-y-8"></div>
         </div>

@@ -13,31 +13,31 @@ const caseTypes = [
     title: "Divorce",
     description:
       "Guiding you through the divorce process with empathy and legal expertise.",
-    image: "/images/divorce.jpg",
+    image: "/divorce.webp",
   },
   {
     title: "Adoption",
     description:
       "Helping families navigate the complex adoption process with care and precision.",
-    image: "/images/adoption.jpg",
+    image: "/adoption.webp",
   },
   {
     title: "Succession",
     description:
       "Assisting with estate planning and succession matters to protect your family's future.",
-    image: "/images/succession.jpg",
+    image: "/succession.webp",
   },
   {
     title: "Child Custody",
     description:
       "Advocating for the best interests of children in custody disputes.",
-    image: "/images/child-custody.jpg",
+    image: "/custody.webp",
   },
   {
     title: "Matrimonial Property",
     description:
       "Ensuring fair division of assets in matrimonial property disputes.",
-    image: "/images/matrimonial-property.jpg",
+    image: "/matrimonial.webp",
   },
 ]
 
@@ -45,8 +45,8 @@ export default function FamilyLawPage() {
   return (
     <PracticeAreaLayout
       title="Family Law"
-      description="Kenneth Waweru & Company Advocates provides compassionate and experienced family law services across East Africa. We understand the sensitive nature of family matters and offer personalized legal solutions."
-      image="/herobg.jpg"
+      description="Our provides compassionate and experienced family law services across East Africa. We understand the sensitive nature of family matters and offer personalized legal solutions."
+      image="/herobg.webp"
       caseTypes={caseTypes}
     >
       <Navbar />

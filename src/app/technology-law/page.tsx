@@ -2,55 +2,57 @@ import { Metadata } from "next"
 import { PracticeAreaLayout } from "@/components/practice-area-layout"
 
 export const metadata: Metadata = {
-  title: "Litigation & ADR | Kenneth Waweru & Company Advocates",
+  title: "Technology Law | Kenneth Waweru & Company Advocates",
   description:
-    "Expert litigation and alternative dispute resolution services across East Africa. We provide skilled representation in mediation, arbitration, and all forms of litigation.",
+    "Expert technology law services across East Africa. We provide specialized legal solutions for tech companies, startups, and digital businesses.",
 }
 
 const caseTypes = [
   {
-    title: "Mediation",
+    title: "Data Privacy & Protection",
     description:
-      "Facilitating mutually beneficial resolutions through expert mediation services.",
-    image: "/images/mediation.jpg",
+      "Ensuring compliance with data protection laws and regulations for your digital operations.",
+    image: "/data-privacy.webp",
   },
   {
-    title: "Arbitration",
+    title: "Intellectual Property",
     description:
-      "Representing clients in binding arbitration proceedings across various industries.",
-    image: "/images/arbitration.jpg",
+      "Protecting your software, patents, trademarks, and other tech-related intellectual property.",
+    image: "/ip-tech.webp",
   },
   {
-    title: "Civil Litigation",
+    title: "Tech Contracts",
     description:
-      "Comprehensive representation in civil disputes, from pre-trial negotiations to courtroom advocacy.",
-    image: "/images/civil-litigation.jpg",
+      "Drafting and reviewing SaaS agreements, licensing deals, and technology transfer agreements.",
+    image: "/contract.webp",
   },
   {
-    title: "Criminal Litigation",
+    title: "Cybersecurity",
     description:
-      "Skilled defense in criminal proceedings, protecting your rights at every stage of the legal process.",
-    image: "/images/criminal-litigation.jpg",
+      "Legal guidance on cybersecurity frameworks, breach response, and compliance matters.",
+    image: "/cybersecurity.webp",
   },
   {
-    title: "Commercial Litigation",
+    title: "E-Commerce",
     description:
-      "Resolving complex business disputes with strategic legal approaches tailored to your objectives.",
-    image: "/images/commercial-litigation.jpg",
+      "Legal solutions for online businesses, including terms of service and consumer protection.",
+    image: "/check.webp",
   },
 ]
 
-export default function LitigationADRPage() {
+export default function TechnologyLawPage() {
   return (
     <PracticeAreaLayout
-      title="Litigation & Alternative Dispute Resolution"
-      description="At Kenneth Waweru & Company Advocates, we offer comprehensive litigation and ADR services. Our experienced team provides skilled representation in mediation, arbitration, and all forms of litigation across East Africa."
-      image="/images/litigation-adr-hero.jpg"
+      title="Technology Law"
+      description="At Kenneth Waweru & Company Advocates, we specialize in technology law, providing cutting-edge legal solutions for tech companies, startups, and digital businesses across East Africa. Our expertise covers the full spectrum of legal issues in the digital economy."
+      image="/images/technology-law-hero.webp"
       caseTypes={caseTypes}
     >
       <section className="py-16 bg-slate-50">
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="max-w-3xl mx-auto space-y-8"></div>
+          <div className="max-w-3xl mx-auto space-y-8">
+            {/* Additional technology law content can be added here */}
+          </div>
         </div>
       </section>
     </PracticeAreaLayout>

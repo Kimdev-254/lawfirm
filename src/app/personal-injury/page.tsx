@@ -13,31 +13,31 @@ const caseTypes = [
     title: "Car Accident",
     description:
       "Helping victims of car accidents recover compensation for injuries and damages.",
-    image: "/images/car-accident.jpg",
+    image: "/car-accident.webp",
   },
   {
     title: "Wrongful Death",
     description:
       "Providing compassionate legal support to families seeking justice for wrongful death claims.",
-    image: "/images/wrongful-death.jpg",
+    image: "/wrongful-death.webp",
   },
   {
     title: "Product Liability",
     description:
       "Advocating for clients harmed by defective or unsafe products.",
-    image: "/images/product-liability.jpg",
+    image: "/product-liability.webp",
   },
   {
     title: "Workplace Injuries",
     description:
       "Securing fair compensation for employees injured on the job due to employer negligence.",
-    image: "/images/workplace-injuries.jpg",
+    image: "/work-injury.webp",
   },
   {
     title: "Medical Malpractice",
     description:
       "Holding healthcare providers accountable for injuries caused by medical negligence.",
-    image: "/images/medical-malpractice.jpg",
+    image: "/medical-malpractice.webp",
   },
 ]
 
@@ -46,7 +46,7 @@ export default function PersonalInjuryPage() {
     <PracticeAreaLayout
       title="Personal Injury"
       description="At Kenneth Waweru & Company Advocates, we offer comprehensive legal representation for personal injury cases. Our experienced team provides skilled advocacy to ensure justice and fair compensation for victims of accidents and negligence."
-      image="/herobg.jpg"
+      image="/herobg.webp"
       caseTypes={caseTypes}
     >
       <Navbar />

@@ -13,31 +13,31 @@ const caseTypes = [
     title: "Contract Law",
     description:
       "Expert guidance on contract law, including drafting, negotiation, and dispute resolution.",
-    image: "/images/contract-law.jpg",
+    image: "/contract.webp",
   },
   {
     title: "Employment Law",
     description:
       "Expert guidance on employment law, including employment contracts, employee benefits, and discrimination.",
-    image: "/images/employment-law.jpg",
+    image: "/employment.webp",
   },
   {
     title: "Business Information",
     description:
       "Expert guidance on business information, including company formation, incorporation, and corporate governance.",
-    image: "/images/business-information.jpg",
+    image: "/business-information.webp",
   },
   {
     title: "Corporate Governance",
     description:
       "Expert guidance on corporate governance, including board meetings, shareholder meetings, and corporate strategy.",
-    image: "/images/corporate-governance.jpg",
+    image: "/corporate-governance.webp",
   },
   {
     title: "Mergers & Acquisitions",
     description:
       "Expert guidance on mergers and acquisitions, including due diligence, due diligence reports, and transaction structuring.",
-    image: "/images/mergers-and-acquisitions.jpg",
+    image: "/merger.webp",
   },
 ]
 
@@ -45,8 +45,8 @@ export default function CorporateLawPage() {
   return (
     <PracticeAreaLayout
       title="Corporate Law Services"
-      description="At Kenneth Waweru & Company Advocates, we specialize in delivering tailored corporate law solutions to businesses of all sizes. Our experienced team ensures compliance, strategic advisory, and comprehensive legal support for your corporate needs."
-      image="/herobg.jpg"
+      description="We specialize in delivering tailored corporate law solutions to businesses of all sizes. Our experienced team ensures compliance, strategic advisory, and comprehensive legal support for your corporate needs."
+      image="/herobg.webp"
       caseTypes={caseTypes}
     >
       <Navbar />
