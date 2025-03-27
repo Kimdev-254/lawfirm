@@ -274,12 +274,23 @@ export function Navbar() {
               <div className="text-sm text-slate-600 mb-4">
                 Call us 24/7: 0714521136
               </div>
-              <Button 
-                className="w-full bg-orange-600 text-white hover:bg-orange-700"
-                onClick={() => setIsMobileMenuOpen(false)}
+              <Link
+                href="/#consultation-form"
+                className="w-full bg-orange-600 text-white hover:bg-orange-700 inline-block text-center py-2 rounded-md transition-colors duration-300"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIsMobileMenuOpen(false);
+                  const element = document.getElementById('consultation-form');
+                  if (element) {
+                    element.scrollIntoView({ 
+                      behavior: 'smooth',
+                      block: 'start'
+                    });
+                  }
+                }}
               >
                 Free Consultation
-              </Button>
+              </Link>
             </div>
           </SheetContent> 
         </Sheet>

@@ -144,7 +144,7 @@ export default function Home() {
                 </div>
               </motion.div>
               {/* Contact Form */}
-              <div className="mt-4">
+              <div className="mt-4" id="form">
                 <ContactForm />
               </div>
             </div>
