@@ -1,9 +1,8 @@
 "use client"
 
-import Link from "next/link"
 import Image from "next/image"
 import { Check } from "lucide-react"
-import { Newspaper, Star } from "lucide-react"
+import { Star } from "lucide-react"
 import { ContactForm } from "@/components/contact-form"
 import { Navbar } from "@/components/navbar"
 import { WhyChooseUs } from "@/components/why-choose-us"
@@ -72,7 +71,7 @@ export default function Home() {
                   <span className="text-white font-semibold">
                     all types of cases across the East African region.
                   </span>{" "}
-                  We've won on behalf of consumers, business owners, companies,
+                  We&apos;ve won on behalf of consumers, business owners, companies,
                   the injured, and more.
                 </motion.p>
               </div>

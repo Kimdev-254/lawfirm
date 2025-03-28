@@ -9,7 +9,7 @@ import { Navbar } from "./navbar"
 interface PracticeAreaLayoutProps {
   title: string
   description: string
-  image: string
+  image?: string // Added image prop as optional
   caseTypes: {
     title: string
     description: string
@@ -21,7 +21,7 @@ interface PracticeAreaLayoutProps {
 export function PracticeAreaLayout({
   title,
   description,
-  image,
+  image = "/herobg.webp", // Default image
   caseTypes,
   children,
 }: PracticeAreaLayoutProps) {
@@ -34,7 +34,7 @@ export function PracticeAreaLayout({
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/30 z-10" />
             <Image
-              src="/herobg.webp"
+              src={image} // Use the passed image prop
               alt="area background"
               fill
               className="object-cover"

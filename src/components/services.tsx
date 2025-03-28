@@ -5,7 +5,6 @@ import Link from "next/link";
 import {
   Scale,
   Gavel,
-  Home,
   Shield,
   Briefcase,
   Landmark,

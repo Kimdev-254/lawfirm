@@ -61,8 +61,6 @@ export function ContactForm() {
         body: JSON.stringify(formData),
       });
 
-      const result = await response.json();
-
       if (response.ok) {
         setResponseMessage("Success! Your request has been sent.");
         setMessageType("success");

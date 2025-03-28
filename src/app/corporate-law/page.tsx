@@ -50,11 +50,6 @@ export default function CorporateLawPage() {
       caseTypes={caseTypes}
     >
       <Navbar />
-      <section className="py-16 bg-slate-50">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="max-w-3xl mx-auto space-y-8"></div>
-        </div>
-      </section>
     </PracticeAreaLayout>
   )
 }
