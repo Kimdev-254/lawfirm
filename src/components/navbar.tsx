@@ -6,6 +6,7 @@ import { ChevronDown, MapPin, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
 import { Logo } from "@/components/ui/logo"
+import Image from "next/image"
 
 const navigationItems = [
   {
@@ -115,9 +116,14 @@ export function Navbar() {
       }`}
     >
       <nav className="container mx-auto px-1 flex items-center justify-between">
-        <Link href="/" className="flex items-center">
-          <Logo className={isScrolled ? "text-slate-900" : "text-white"} />
-        </Link>
+      <Link href="/" className="flex items-center">
+  <img 
+    src="/waweruadvocates.svg" 
+    alt="Waweru Advocates Logo" 
+    className={`h-10 ${isScrolled ? "" : "invert"}`} 
+  />
+</Link>
+
         <div className="hidden lg:flex items-center space-x-3">
           {navigationItems.map((item, index) => (
             <div key={index} className="relative group">
