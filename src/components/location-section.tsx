@@ -30,7 +30,7 @@ export function LocationSection() {
             <div className="space-y-6">
               {/* Call Us */}
               <div className="flex items-center space-x-4">
-                <PhoneCall size={24} className="text-orange-600" />
+                <PhoneCall size={24} className="text-gold" />
                 <div>
                   <h3 className="text-lg font-semibold">Call Us</h3>
                   <p className="text-gray-600">{phoneNumber}</p>
@@ -42,28 +42,28 @@ export function LocationSection() {
                     {copied ? "Copied!" : "Copy Number"}
                   </button>
                   <p className="text-sm text-gray-600 mt-1">
-                    <span className="font-semibold text-orange-600">Call us for an appointment</span>
+                    <span className="font-semibold text-gold">Call us for an appointment</span>
                   </p>
                 </div>
               </div>
 
               {/* Location */}
               <div className="flex items-center space-x-4">
-                <MapPin size={24} className="text-orange-600" />
+                <MapPin size={24} className="text-gold" />
                 <div>
                   <h3 className="text-lg font-semibold">Location</h3>
                   <p className="text-gray-600">{address}</p>
                   <Link
                     href={`https://maps.google.com/?q=${position}`}
                     target="_blank"
-                    className="text-orange-600 hover:underline text-sm"
+                    className="text-gold hover:underline text-sm"
                   >
                     View on Google Maps
                   </Link>
                   <Link
                     href={`https://www.google.com/maps/dir/?api=1&destination=${position}`}
                     target="_blank"
-                    className="mt-2 bg-orange-600 text-white text-sm px-3 py-1.5 rounded-md hover:bg-orange-700 transition flex items-center w-max"
+                    className="mt-2 bg-gold text-white text-sm px-3 py-1.5 rounded-md hover:bg-gold transition flex items-center w-max"
                   >
                     <Navigation size={16} className="mr-1" /> Get Directions
                   </Link>
@@ -72,7 +72,7 @@ export function LocationSection() {
 
               {/* Business Hours */}
               <div className="flex items-center space-x-4">
-                <Clock size={24} className="text-orange-600" />
+                <Clock size={24} className="text-gold" />
                 <div>
                   <h3 className="text-lg font-semibold">Business Hours</h3>
                   <p className="text-gray-600">

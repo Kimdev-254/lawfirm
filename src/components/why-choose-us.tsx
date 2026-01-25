@@ -107,11 +107,11 @@ export function WhyChooseUs() {
                     className="flex-shrink-0"
                   >
                     <div className="w-12 h-12 rounded-full bg-slate-200 flex items-center justify-center">
-                      <reason.icon className="w-6 h-6 text-orange-600" />
+                      <reason.icon className="w-6 h-6 text-gold" />
                     </div>
                   </motion.div>
                   <div>
-                    <h3 className="text-xl font-bold text-orange-600 mb-2">
+                    <h3 className="text-xl font-bold text-gold mb-2">
                       {reason.title}
                     </h3>
                     <p className="text-slate-200">{reason.description}</p>

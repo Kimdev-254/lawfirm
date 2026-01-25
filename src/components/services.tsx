@@ -70,7 +70,7 @@ export function Services() {
                 <div className="bg-gray-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 cursor-pointer hover:bg-orange-100">
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 flex items-center justify-center bg-slate-900 rounded-full">
-                      <service.icon className="w-6 h-6 text-orange-600" />
+                      <service.icon className="w-6 h-6 text-gold" />
                     </div>
                     <h3 className="text-xl font-semibold text-slate-900">
                       {service.title}

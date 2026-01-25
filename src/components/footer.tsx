@@ -26,7 +26,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/litigation-adr"
-                  className="text-slate-300 hover:text-orangee-600"
+                  className="text-slate-300 hover:text-gold"
                 >
                   Litigation & ADR
                 </Link>
@@ -34,7 +34,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/family-law"
-                  className="text-slate-300 hover:text-orangee-600"
+                  className="text-slate-300 hover:text-gold"
                 >
                   Family Law
                 </Link>
@@ -42,7 +42,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/corporate-law"
-                  className="text-slate-300 hover:text-orangee-600"
+                  className="text-slate-300 hover:text-gold"
                 >
                   Corporate Law
                 </Link>
@@ -50,7 +50,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/technology-law"
-                  className="text-slate-300 hover:text-orangee-600"
+                  className="text-slate-300 hover:text-gold"
                 >
                   Technology Law
                 </Link>
@@ -58,7 +58,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/other-legal-services"
-                  className="text-slate-300 hover:text-orangee-600"
+                  className="text-slate-300 hover:text-gold"
                 >
                   Other Legal Services
                 </Link>
@@ -80,16 +80,16 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
             <div className="flex space-x-4">
-              <a href="#" className="text-slate-300 hover:text-orangee-600">
+              <a href="#" className="text-slate-300 hover:text-gold">
                 <Facebook />
               </a>
-              <a href="#" className="text-slate-300 hover:text-orangee-600">
+              <a href="#" className="text-slate-300 hover:text-gold">
                 <Twitter />
               </a>
-              <a href="https://www.linkedin.com/in/kenneth-waweru-advocates-ab868533a/" className="text-slate-300 hover:text-orangee-600">
+              <a href="https://www.linkedin.com/in/kenneth-waweru-advocates-ab868533a/" className="text-slate-300 hover:text-gold">
                 <LinkedIn />
               </a>
-              <a href="#" className="text-slate-300 hover:text-orangee-600">
+              <a href="#" className="text-slate-300 hover:text-gold">
                 <Instagram />
               </a>
             </div>

@@ -47,7 +47,7 @@ export default function FloatingMenu() {
               <FloatingOption
                 icon={<MessageCircle size={20} className="text-white" />}
                 text="Chatbot"
-                bgColor="bg-blue-600 hover:bg-orange-600"
+                bgColor="bg-blue-600 hover:bg-gold"
                 onClick={() => {}}
               />
             </motion.div>
@@ -56,7 +56,7 @@ export default function FloatingMenu() {
               <FloatingOption
                 icon={<PhoneCall size={20} className="text-white" />}
                 text="WhatsApp"
-                bgColor="bg-green-500 hover:bg-gorange-600"
+                bgColor="bg-green-500 hover:bg-ggold"
                 onClick={() => window.open('https://wa.me/254714521136', '_blank')}
               />
             </motion.div>
@@ -65,7 +65,7 @@ export default function FloatingMenu() {
               <FloatingOption
                 icon={<Mail size={20} className="text-white" />}
                 text="Email"
-                bgColor="bg-red-500 hover:bgorange-600"
+                bgColor="bg-red-500 hover:bggold"
                 onClick={() => window.location.href = 'mailto:wawerulawadvocates@gmail.com'}
               />
             </motion.div>
@@ -79,7 +79,7 @@ export default function FloatingMenu() {
       >
         <Button
           onClick={() => setIsOpen(!isOpen)}
-          className="rounded-full w-16 h-16 bg-gray-900 hover:bg-orange-800 text-orange-600 shadow-xl transition-all duration-300 ease-in-out flex items-center justify-center transform hover:shadoworange"
+          className="rounded-full w-16 h-16 bg-gray-900 hover:bg-orange-800 text-gold shadow-xl transition-all duration-300 ease-in-out flex items-center justify-center transform hover:shadoworange"
         >
           <motion.div
             animate={{ rotate: isOpen ? 180 : 0 }}
@@ -111,7 +111,7 @@ function FloatingOption({ icon, text, bgColor, onClick }: FloatingOptionProps) {
       <div className={`w-10 h-10 flex items-center justify-center rounded-full ${bgColor} shadow-lg transition-all duration-300`}>
         {icon}
       </div>
-      <span className="text-sm text-gray-300 font-medium bg-gray-800 px-3 py-1 rounded-lg shadow-md hover:bg-orange-700 transition-all duration-300">
+      <span className="text-sm text-gray-300 font-medium bg-gray-800 px-3 py-1 rounded-lg shadow-md hover:bg-gold transition-all duration-300">
         {text}
       </span>
     </motion.div>

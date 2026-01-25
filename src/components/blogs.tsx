@@ -37,7 +37,7 @@ export default function Blogs() {
           {articles.map((article, index) => (
             <Link key={index} href={article.href} passHref>
               <div className="bg-gray-100 p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 cursor-pointer">
-                <p className="text-sm font-semibold text-orange-600 uppercase mb-2">
+                <p className="text-sm font-semibold text-gold uppercase mb-2">
                   {article.category}
                 </p>
                 <h3 className="text-lg font-semibold text-slate-900 hover:underline">
@@ -55,7 +55,7 @@ export default function Blogs() {
         <div className="mt-8 text-center">
           <Link
             href="/articles"
-            className="text-orange-600 text-lg font-semibold hover:underline"
+            className="text-gold text-lg font-semibold hover:underline"
           >
             View All →
           </Link>

@@ -21,6 +21,16 @@ module.exports = {
     },
     extend: {
       colors: {
+        navy: {
+          DEFAULT: "#0B2545",
+          light: "#13315C",
+          dark: "#061A33"
+        },
+        gold: {
+          DEFAULT: "#C5A065",
+          light: "#D4B683",
+          dark: "#A68545"
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -54,6 +64,11 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+      },
+      fontFamily: {
+        playfair: ["var(--font-playfair)"],
+        cormorant: ["var(--font-cormorant)"],
+        montserrat: ["var(--font-montserrat)"],
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -22,24 +22,24 @@ export function ArticlesCard() {
         </p>
         <ul className="space-y-3">
           <li className="flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-orange-600"></div>
+            <div className="w-2 h-2 rounded-full bg-gold"></div>
             <span className="text-sm text-gray-600">Corporate Law Updates</span>
           </li>
           <li className="flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-orange-600"></div>
+            <div className="w-2 h-2 rounded-full bg-gold"></div>
             <span className="text-sm text-gray-600">Family Law Guides</span>
           </li>
           <li className="flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-orange-600"></div>
+            <div className="w-2 h-2 rounded-full bg-gold"></div>
             <span className="text-sm text-gray-600">Property Law Analysis</span>
           </li>
           <li className="flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-orange-600"></div>
+            <div className="w-2 h-2 rounded-full bg-gold"></div>
             <span className="text-sm text-gray-600">Legal Tech Insights</span>
           </li>
         </ul>
         <Link href="/articles">
-          <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white transition-colors duration-300">
+          <Button className="w-full bg-gold hover:bg-gold text-white transition-colors duration-300">
             Read More
           </Button>
         </Link>

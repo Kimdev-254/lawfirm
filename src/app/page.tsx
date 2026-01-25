@@ -37,7 +37,7 @@ export default function Home() {
               priority
             />
           </div>
-          
+
           <div className="container mx-auto px-4 sm:px-6 relative grid lg:grid-cols-2 gap-8 items-start max-w-screen-2xl z-20">
             {/* Left Column */}
             <div className="space-y-6 md:space-y-8">
@@ -50,9 +50,9 @@ export default function Home() {
                 >
                   Kenneth Waweru & Company Advocates
                 </motion.h1>
-                
+
                 <motion.p
-                  className="text-xl md:text-2xl font-semibold text-orange-500 font-cormorant h-8"
+                  className="text-xl md:text-2xl font-semibold text-gold font-cormorant h-8"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.8 }}
@@ -60,7 +60,7 @@ export default function Home() {
                   <i>{text}</i>
                   <Cursor cursorStyle="_" />
                 </motion.p>
-                
+
                 <motion.p
                   className="text-lg md:text-xl text-slate-300 leading-relaxed"
                   initial={{ opacity: 0, y: 20 }}
@@ -101,7 +101,7 @@ export default function Home() {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.5, delay: 1.5 + index * 0.2 }}
                     >
-                      <div className="w-5 h-5 rounded-full bg-orange-600 flex items-center justify-center shrink-0 mt-0.5">
+                      <div className="w-5 h-5 rounded-full bg-gold flex items-center justify-center shrink-0 mt-0.5">
                         <Check className="w-4 h-4 text-white" />
                       </div>
                       <span className="text-base md:text-lg">{text}</span>
@@ -115,24 +115,24 @@ export default function Home() {
                     <span className="font-bold text-xl md:text-2xl text-white">Google</span>
                     <div className="flex items-center gap-1 mt-1">
                       {[...Array(3)].map((_, i) => (
-                        <Star 
+                        <Star
                           key={i}
-                          className="w-4 h-4 md:w-5 md:h-5 text-yellow-400 fill-yellow-400"
+                          className="w-4 h-4 md:w-5 md:h-5 text-gold fill-gold"
                           strokeWidth={1.5}
                         />
                       ))}
                       <div className="relative w-4 h-4 md:w-5 md:h-5">
-                        <Star 
-                          className="absolute top-0 left-0 w-4 h-4 md:w-5 md:h-5 text-yellow-400"
+                        <Star
+                          className="absolute top-0 left-0 w-4 h-4 md:w-5 md:h-5 text-gold"
                           fill="url(#partialFill)"
                           strokeWidth={1.5}
                         />
-                        <Star 
+                        <Star
                           className="absolute top-0 left-0 w-4 h-4 md:w-5 md:h-5 text-gray-300 fill-gray-300"
                           strokeWidth={1.5}
                         />
                       </div>
-                      <Star 
+                      <Star
                         className="w-4 h-4 md:w-5 md:h-5 text-gray-300 fill-gray-300"
                         strokeWidth={1.5}
                       />
@@ -165,7 +165,7 @@ export default function Home() {
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </motion.div>
-              
+
               <motion.div
                 className="space-y-4"
                 initial={{ opacity: 0, y: 20 }}
@@ -177,7 +177,7 @@ export default function Home() {
                 </h2>
                 <div className="space-y-3">
                   <motion.p
-                    className="text-xl md:text-2xl font-semibold text-orange-600 font-cormorant"
+                    className="text-xl md:text-2xl font-semibold text-gold font-cormorant"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.8 }}

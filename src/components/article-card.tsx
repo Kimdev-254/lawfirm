@@ -22,7 +22,7 @@ export function ArticleCard({ article, onClick }: ArticleCardProps) {
       }}
     >
       <div className="p-6">
-        <p className="text-orange-500 text-sm font-semibold mb-2">
+        <p className="text-gold text-sm font-semibold mb-2">
           {article.category}
         </p>
         <h2 className="text-xl font-bold text-slate-800 mb-2">
@@ -33,7 +33,7 @@ export function ArticleCard({ article, onClick }: ArticleCardProps) {
           <span className="text-gray-500 text-sm">{article.date}</span>
           <Button
             variant="link"
-            className="text-orange-600 hover:text-orange-800"
+            className="text-gold hover:text-orange-800"
             onClick={onClick}
           >
             Read More

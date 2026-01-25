@@ -232,7 +232,7 @@ export function ContactForm() {
 
           <Button
             type="submit"
-            className="w-full bg-orange-600 hover:bg-orange-800 text-white"
+            className="w-full bg-gold hover:bg-orange-800 text-white"
             disabled={isSubmitting}
           >
             {isSubmitting ? (

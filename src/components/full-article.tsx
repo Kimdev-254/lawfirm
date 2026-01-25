@@ -27,7 +27,7 @@ export function FullArticle({ article, onClose }: FullArticleProps) {
           <h2 className="text-3xl font-bold text-slate-800 mb-2">
             {article.title}
           </h2>
-          <p className="text-orange-500 text-sm font-semibold">
+          <p className="text-gold text-sm font-semibold">
             {article.category}
           </p>
         </div>

@@ -45,7 +45,7 @@ export function Team() {
                 <h3 className="text-2xl font-semibold text-white">
                   {member.name}
                 </h3>
-                <p className="text-orange-600 text-lg">{member.title}</p>
+                <p className="text-gold text-lg">{member.title}</p>
                 <div className="mt-4 flex justify-center gap-6">
                   <a
                     href={member.linkedin}
