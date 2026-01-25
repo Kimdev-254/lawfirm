@@ -109,31 +109,29 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 w-full z-40 transition-all duration-300 ${
-        isScrolled
+      className={`fixed top-0 w-full z-40 transition-all duration-300 ${isScrolled
           ? "bg-white shadow-md text-black py-2"
           : "bg-slate-950 text-white py-3"
-      }`}
+        }`}
     >
       <nav className="container mx-auto px-1 flex items-center justify-between">
-      <Link href="/" className="flex items-center">
-  <img 
-    src="/waweruadvocates.svg" 
-    alt="Waweru Advocates Logo" 
-    className={`h-10 ${isScrolled ? "" : "invert"}`} 
-  />
-</Link>
+        <Link href="/" className="flex items-center">
+          <img
+            src="/new-logo.png"
+            alt="Kenneth Waweru & Company Advocates"
+            className="h-16 w-auto object-contain"
+          />
+        </Link>
 
         <div className="hidden lg:flex items-center space-x-3">
           {navigationItems.map((item, index) => (
             <div key={index} className="relative group">
               <Link
                 href={item.href || `/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
-                className={`flex items-center gap-1 py-2 text-sm font-medium whitespace-nowrap ${
-                  isScrolled
-                    ? "text-slate-800 hover:text-orange-600"
-                    : "text-slate-200 hover:text-orange-600"
-                }`}
+                className={`flex items-center gap-1 py-2 text-sm font-medium whitespace-nowrap ${isScrolled
+                    ? "text-slate-800 hover:text-gold"
+                    : "text-slate-200 hover:text-gold"
+                  }`}
               >
                 {item.title}
                 <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
@@ -145,7 +143,7 @@ export function Navbar() {
                     <Link
                       key={subIndex}
                       href={subItem.href}
-                      className="block px-4 py-1.5 text-sm text-slate-700 hover:bg-slate-50 hover:text-orange-600 whitespace-nowrap"
+                      className="block px-4 py-1.5 text-sm text-slate-700 hover:bg-slate-50 hover:text-gold whitespace-nowrap"
                     >
                       {subItem.title}
                     </Link>
@@ -161,11 +159,10 @@ export function Navbar() {
               <Button
                 variant="ghost"
                 size="icon"
-                className={`${
-                  isScrolled
-                    ? "text-slate-800 hover:text-orange-600"
-                    : "text-white hover:text-orange-600"
-                } h-8 w-8`}
+                className={`${isScrolled
+                    ? "text-slate-800 hover:text-gold"
+                    : "text-white hover:text-gold"
+                  } h-8 w-8`}
               >
                 <MapPin className="w-8 h-8" />
               </Button>
@@ -179,13 +176,13 @@ export function Navbar() {
                 <div className="p-2">
                   <button
                     onClick={handleViewMap}
-                    className="block w-full p-2 text-left text-sm text-slate-950 hover:bg-orange-600 rounded-md transition-colors"
+                    className="block w-full p-2 text-left text-sm text-slate-950 hover:bg-gold rounded-md transition-colors"
                   >
                     View on map
                   </button>
                   <button
                     onClick={handleGetDirections}
-                    className="block w-full p-2 text-left text-sm text-slate-950 hover:bg-orange-600 rounded-md transition-colors"
+                    className="block w-full p-2 text-left text-sm text-slate-950 hover:bg-gold rounded-md transition-colors"
                   >
                     Get directions
                   </button>
@@ -194,31 +191,28 @@ export function Navbar() {
             </div>
             <Link
               href="/contact"
-              className={`text-xs ${
-                isScrolled
-                  ? "text-slate-600 hover:text-orange-600"
+              className={`text-xs ${isScrolled
+                  ? "text-slate-600 hover:text-gold"
                   : "text-slate-400 hover:text-white"
-              } transition-colors`}
+                } transition-colors`}
             ></Link>
           </div>
           <div className="text-right">
-            <div className="text-orange-600 text-sm font-medium">
+            <div className="text-gold text-sm font-medium">
               0714521136
             </div>
             <div
-              className={`text-xs ${
-                isScrolled ? "text-gray-600" : "text-slate-400"
-              }`}
+              className={`text-xs ${isScrolled ? "text-gray-600" : "text-slate-400"
+                }`}
             >
               Available 24/7
             </div>
           </div>
           <Button
-            className={`text-sm ${
-              isScrolled
-                ? "bg-orange-600 hover:bg-orange-600 text-white"
-                : "bg-orange-600 hover:bg-orange-600 text-white"
-            }`}
+            className={`text-sm ${isScrolled
+                ? "bg-gold hover:bg-gold text-white"
+                : "bg-gold hover:bg-gold text-white"
+              }`}
           >
             Free Consultation
           </Button>
@@ -228,11 +222,10 @@ export function Navbar() {
             <Button
               variant="outline"
               size="icon"
-              className={`lg:hidden ${
-                isScrolled 
-                  ? "border-slate-300 bg-white text-slate-950" 
+              className={`lg:hidden ${isScrolled
+                  ? "border-slate-300 bg-white text-slate-950"
                   : "border-slate-700 text-white hover:bg-slate-800"
-              }`}
+                }`}
             >
               {isMobileMenuOpen ? (
                 <X className="w-4 h-4" />
@@ -241,8 +234,8 @@ export function Navbar() {
               )}
             </Button>
           </SheetTrigger>
-          <SheetContent 
-            side="right" 
+          <SheetContent
+            side="right"
             className="w-[300px] sm:w-[400px] overflow-y-auto max-h-screen"
           >
             <SheetTitle className="text-xl font-bold text-slate-500 mb-6">
@@ -253,7 +246,7 @@ export function Navbar() {
                 <div key={index} className="border-b border-slate-200 pb-4 last:border-0">
                   <Link
                     href={section.href || `/${section.title.toLowerCase().replace(/\s+/g, '-')}`}
-                    className="font-semibold text-lg text-orange-800 hover:text-orange-600 transition-colors block mb-3"
+                    className="font-semibold text-lg text-orange-800 hover:text-gold transition-colors block mb-3"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {section.title}
@@ -263,7 +256,7 @@ export function Navbar() {
                       <Link
                         key={itemIndex}
                         href={item.href}
-                        className="px-2 py-1.5 text-sm text-slate-300 hover:text-orange-600 hover:bg-orange-50 rounded-md transition-colors"
+                        className="px-2 py-1.5 text-sm text-slate-300 hover:text-gold hover:bg-orange-50 rounded-md transition-colors"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         {item.title}
@@ -274,7 +267,7 @@ export function Navbar() {
               ))}
             </nav>
             <div className="mt-8 border-t border-slate-200 pt-4">
-              <div className="text-sm font-medium text-orange-600 mb-1">
+              <div className="text-sm font-medium text-gold mb-1">
                 Need Assistance?
               </div>
               <div className="text-sm text-slate-600 mb-4">
@@ -282,13 +275,13 @@ export function Navbar() {
               </div>
               <Link
                 href="/#consultation-form"
-                className="w-full bg-orange-600 text-white hover:bg-orange-700 inline-block text-center py-2 rounded-md transition-colors duration-300"
+                className="w-full bg-gold text-white hover:bg-gold inline-block text-center py-2 rounded-md transition-colors duration-300"
                 onClick={(e) => {
                   e.preventDefault();
                   setIsMobileMenuOpen(false);
                   const element = document.getElementById('consultation-form');
                   if (element) {
-                    element.scrollIntoView({ 
+                    element.scrollIntoView({
                       behavior: 'smooth',
                       block: 'start'
                     });
@@ -298,7 +291,7 @@ export function Navbar() {
                 Free Consultation
               </Link>
             </div>
-          </SheetContent> 
+          </SheetContent>
         </Sheet>
       </nav>
     </header>
