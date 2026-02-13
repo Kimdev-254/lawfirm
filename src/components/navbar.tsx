@@ -110,8 +110,8 @@ export function Navbar() {
   return (
     <header
       className={`fixed top-0 w-full z-40 transition-all duration-300 ${isScrolled
-          ? "bg-white shadow-md text-black py-2"
-          : "bg-slate-950 text-white py-3"
+        ? "bg-white shadow-md text-black py-2"
+        : "bg-navy text-white py-3"
         }`}
     >
       <nav className="container mx-auto px-1 flex items-center justify-between">
@@ -129,8 +129,8 @@ export function Navbar() {
               <Link
                 href={item.href || `/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
                 className={`flex items-center gap-1 py-2 text-sm font-medium whitespace-nowrap ${isScrolled
-                    ? "text-slate-800 hover:text-gold"
-                    : "text-slate-200 hover:text-gold"
+                  ? "text-navy hover:text-gold"
+                  : "text-slate-200 hover:text-gold"
                   }`}
               >
                 {item.title}
@@ -160,8 +160,8 @@ export function Navbar() {
                 variant="ghost"
                 size="icon"
                 className={`${isScrolled
-                    ? "text-slate-800 hover:text-gold"
-                    : "text-white hover:text-gold"
+                  ? "text-navy hover:text-gold"
+                  : "text-white hover:text-gold"
                   } h-8 w-8`}
               >
                 <MapPin className="w-8 h-8" />
@@ -169,20 +169,20 @@ export function Navbar() {
               <div className="absolute right-0 top-full bg-white rounded-lg shadow-lg mt-1 w-80 py-2 transition-all duration-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible">
                 <div className="p-4 border-b">
                   <h4 className="font-semibold text-black">Our Location</h4>
-                  <p className="text-sm text-slate-800">
+                  <p className="text-sm text-navy">
                     Kimuchu Complex Building 4floor
                   </p>
                 </div>
                 <div className="p-2">
                   <button
                     onClick={handleViewMap}
-                    className="block w-full p-2 text-left text-sm text-slate-950 hover:bg-gold rounded-md transition-colors"
+                    className="block w-full p-2 text-left text-sm text-navy hover:bg-gold rounded-md transition-colors"
                   >
                     View on map
                   </button>
                   <button
                     onClick={handleGetDirections}
-                    className="block w-full p-2 text-left text-sm text-slate-950 hover:bg-gold rounded-md transition-colors"
+                    className="block w-full p-2 text-left text-sm text-navy hover:bg-gold rounded-md transition-colors"
                   >
                     Get directions
                   </button>
@@ -192,8 +192,8 @@ export function Navbar() {
             <Link
               href="/contact"
               className={`text-xs ${isScrolled
-                  ? "text-slate-600 hover:text-gold"
-                  : "text-slate-400 hover:text-white"
+                ? "text-slate-600 hover:text-gold"
+                : "text-slate-400 hover:text-white"
                 } transition-colors`}
             ></Link>
           </div>
@@ -210,8 +210,8 @@ export function Navbar() {
           </div>
           <Button
             className={`text-sm ${isScrolled
-                ? "bg-gold hover:bg-gold text-white"
-                : "bg-gold hover:bg-gold text-white"
+              ? "bg-gold hover:bg-gold text-white"
+              : "bg-gold hover:bg-gold text-white"
               }`}
           >
             Free Consultation
@@ -223,8 +223,8 @@ export function Navbar() {
               variant="outline"
               size="icon"
               className={`lg:hidden ${isScrolled
-                  ? "border-slate-300 bg-white text-slate-950"
-                  : "border-slate-700 text-white hover:bg-slate-800"
+                ? "border-slate-300 bg-white text-navy"
+                : "border-navy-light text-white hover:bg-navy-light"
                 }`}
             >
               {isMobileMenuOpen ? (
