@@ -241,17 +241,17 @@ export function Navbar() {
           </SheetTrigger>
           <SheetContent
             side="right"
-            className="w-[300px] sm:w-[400px] overflow-y-auto max-h-screen"
+            className="w-[300px] sm:w-[400px] overflow-y-auto max-h-screen bg-navy text-white border-l border-white/10"
           >
-            <SheetTitle className="text-xl font-bold text-slate-500 mb-6">
+            <SheetTitle className="text-xl font-bold text-gold mb-6 border-b border-white/10 pb-4">
               Areas of Practice
             </SheetTitle>
             <nav className="flex flex-col gap-4">
               {navigationItems.map((section, index) => (
-                <div key={index} className="border-b border-slate-200 pb-4 last:border-0">
+                <div key={index} className="border-b border-white/10 pb-4 last:border-0">
                   <Link
                     href={section.href || `/${section.title.toLowerCase().replace(/\s+/g, '-')}`}
-                    className="font-semibold text-lg text-orange-800 hover:text-gold transition-colors block mb-3"
+                    className="font-semibold text-lg text-white hover:text-gold transition-colors block mb-3"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {section.title}
@@ -261,7 +261,7 @@ export function Navbar() {
                       <Link
                         key={itemIndex}
                         href={item.href}
-                        className="px-2 py-1.5 text-sm text-slate-300 hover:text-gold hover:bg-orange-50 rounded-md transition-colors"
+                        className="px-2 py-1.5 text-sm text-slate-300 hover:text-gold hover:bg-white/5 rounded-md transition-colors"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         {item.title}
@@ -271,16 +271,16 @@ export function Navbar() {
                 </div>
               ))}
             </nav>
-            <div className="mt-8 border-t border-slate-200 pt-4">
+            <div className="mt-8 border-t border-white/10 pt-4">
               <div className="text-sm font-medium text-gold mb-1">
                 Need Assistance?
               </div>
-              <div className="text-sm text-slate-600 mb-4">
+              <div className="text-sm text-slate-300 mb-4">
                 Call us 24/7: 0714521136
               </div>
               <Link
                 href="/#consultation-form"
-                className="w-full bg-gold text-white hover:bg-gold inline-block text-center py-2 rounded-md transition-colors duration-300"
+                className="w-full bg-gold text-white hover:bg-orange-600 inline-block text-center py-3 rounded-md transition-colors duration-300 font-semibold"
                 onClick={(e) => {
                   e.preventDefault();
                   setIsMobileMenuOpen(false);

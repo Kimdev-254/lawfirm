@@ -11,9 +11,15 @@ export function Footer() {
     <footer className="bg-navy text-white py-12">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div>
-            <h3 className="text-lg font-semibold font-serif mb-4">About Us</h3>
-            <p className="text-slate-300 font-serif">
+          <div className="space-y-4">
+            <Link href="/" className="block">
+              <img
+                src="/new-logo.png"
+                alt="Kenneth Waweru & Company Advocates"
+                className="h-24 w-auto object-contain bg-white/5 p-2 rounded-lg"
+              />
+            </Link>
+            <p className="text-slate-300 font-serif leading-relaxed">
               Kenneth Waweru & Company Advocates is a leading law firm providing
               expert legal services across East Africa.
             </p>
