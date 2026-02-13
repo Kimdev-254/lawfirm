@@ -44,7 +44,7 @@ export default function Home() {
               <div className="space-y-3 md:space-y-4">
                 <motion.h1
                   className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight"
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 1, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8 }}
                 >
@@ -53,7 +53,7 @@ export default function Home() {
 
                 <motion.p
                   className="text-xl md:text-2xl font-semibold text-gold font-cormorant h-8"
-                  initial={{ opacity: 0 }}
+                  initial={{ opacity: 1 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.8 }}
                 >
@@ -63,7 +63,7 @@ export default function Home() {
 
                 <motion.p
                   className="text-lg md:text-xl text-slate-300 leading-relaxed"
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 1, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 1.2 }}
                 >
@@ -79,13 +79,13 @@ export default function Home() {
               {/* Features List + Google Reviews */}
               <motion.div
                 className="flex flex-col md:flex-row gap-4 md:gap-6 items-start"
-                initial={{ opacity: 0 }}
+                initial={{ opacity: 1 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 1.5 }}
               >
                 <motion.div
                   className="space-y-3 flex-grow"
-                  initial={{ opacity: 0, x: -20 }}
+                  initial={{ opacity: 1, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: 1.5 }}
                 >
@@ -97,7 +97,7 @@ export default function Home() {
                     <motion.div
                       key={text}
                       className="flex items-start gap-3 text-slate-300"
-                      initial={{ opacity: 0, x: -20 }}
+                      initial={{ opacity: 1, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.5, delay: 1.5 + index * 0.2 }}
                     >
@@ -152,7 +152,7 @@ export default function Home() {
             <div className="relative space-y-6 lg:pl-8">
               <motion.div
                 className="relative h-[400px] md:h-[600px] lg:h-[700px] w-full"
-                initial={{ opacity: 0, scale: 0.95 }}
+                initial={{ opacity: 1, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1, delay: 0.5 }}
               >
@@ -168,7 +168,7 @@ export default function Home() {
 
               <motion.div
                 className="space-y-4"
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 1, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 1 }}
               >
@@ -178,7 +178,7 @@ export default function Home() {
                 <div className="space-y-3">
                   <motion.p
                     className="text-xl md:text-2xl font-semibold text-gold font-cormorant"
-                    initial={{ opacity: 0 }}
+                    initial={{ opacity: 1 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.8 }}
                   >

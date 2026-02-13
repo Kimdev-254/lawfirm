@@ -8,12 +8,12 @@ export function ArticlesCard() {
   return (
     <motion.div
       className="w-[300px] h-[400px] bg-white rounded-lg shadow-lg overflow-hidden"
-      initial={{ opacity: 0, x: -50 }}
+      initial={{ opacity: 1, x: -50 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
       <div className="p-6 space-y-4">
-        <h3 className="text-2xl font-serif text-slate-950 font-bold">
+        <h3 className="text-2xl font-serif text-navy font-bold">
           Our Articles
         </h3>
         <p className="text-sm text-gray-600">

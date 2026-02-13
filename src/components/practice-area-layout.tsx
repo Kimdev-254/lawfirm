@@ -26,7 +26,7 @@ export function PracticeAreaLayout({
   children,
 }: PracticeAreaLayoutProps) {
   return (
-    <div className="min-h-screen bg-slate-950">
+    <div className="min-h-screen bg-navy">
       <Navbar/>
       <main>
         {/* Hero Section */}
@@ -46,7 +46,7 @@ export function PracticeAreaLayout({
             <div className="grid lg:grid-cols-2 gap-12 items-start">
               {/* Left Column - Content */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 1, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 className="space-y-8"
@@ -76,7 +76,7 @@ export function PracticeAreaLayout({
 
               {/* Right Column - Contact Form */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 1, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="lg:sticky lg:top-24"
@@ -98,7 +98,7 @@ export function PracticeAreaLayout({
               {caseTypes.map((caseType, index) => (
                 <motion.div
                   key={caseType.title}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 1, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="group relative overflow-hidden rounded-lg shadow-lg"

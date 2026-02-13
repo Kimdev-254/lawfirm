@@ -72,7 +72,7 @@ export default function ArticlesPage() {
   return (
     <motion.div
       className="min-h-screen bg-white"
-      initial={{ opacity: 0 }}
+      initial={{ opacity: 1 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
