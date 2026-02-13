@@ -29,6 +29,9 @@ const cormorant = Cormorant_Garamond({
 export const metadata: Metadata = {
   title: "Kenneth Waweru & Company Advocates",
   description: "Expert legal services across East Africa",
+  icons: {
+    icon: '/favicon.ico',
+  },
 }
 
 export default function RootLayout({
