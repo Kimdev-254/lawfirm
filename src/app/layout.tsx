@@ -30,7 +30,13 @@ export const metadata: Metadata = {
   title: "Kenneth Waweru & Company Advocates",
   description: "Expert legal services across East Africa",
   icons: {
-    icon: '/favicon.ico',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/new-logo.png', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/new-logo.png' },
+    ],
   },
 }
 
