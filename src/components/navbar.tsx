@@ -115,12 +115,17 @@ export function Navbar() {
         }`}
     >
       <nav className="container mx-auto px-1 flex items-center justify-between">
-        <Link href="/" className="flex items-center">
+        <Link href="/" className="flex items-center gap-3">
           <img
             src="/new-logo.png"
             alt="Kenneth Waweru & Company Advocates"
-            className="h-16 w-auto object-contain"
+            className="h-14 w-auto object-contain"
           />
+          <div className={`flex flex-col font-serif font-bold leading-none ${isScrolled ? "text-navy" : "text-white"
+            }`}>
+            <span className="text-sm md:text-base">Kenneth Waweru &</span>
+            <span className="text-xs md:text-sm text-gold">Company Advocates</span>
+          </div>
         </Link>
 
         <div className="hidden lg:flex items-center space-x-3">
