@@ -5,7 +5,6 @@ import Link from "next/link"
 import { ChevronDown, MapPin, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
-import { Logo } from "@/components/ui/logo"
 import Image from "next/image"
 
 const navigationItems = [
@@ -116,10 +115,13 @@ export function Navbar() {
     >
       <nav className="container mx-auto px-1 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3">
-          <img
+          <Image
             src="/new-logo.png"
             alt="Kenneth Waweru & Company Advocates"
+            width={200}
+            height={56}
             className="h-14 w-auto object-contain"
+            priority
           />
           <div className={`flex flex-col font-serif font-bold leading-none ${isScrolled ? "text-navy" : "text-white"
             }`}>
