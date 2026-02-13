@@ -214,7 +214,7 @@ export function Navbar() {
             </div>
           </div>
           <Button
-            className={`text-sm ${isScrolled
+            className={`text-xs ${isScrolled
               ? "bg-gold hover:bg-gold text-white"
               : "bg-gold hover:bg-gold text-white"
               }`}
