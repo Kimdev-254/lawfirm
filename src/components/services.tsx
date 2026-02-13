@@ -52,16 +52,16 @@ const services = [
 
 export function Services() {
   return (
-    <section className="py-16 md:py-24 bg-slate-200">
+    <section className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6">
-      <h2 className="text-3xl md:text-4xl font-serif font-bold text-center text-slate-900 mb-12">
+        <h2 className="text-3xl md:text-4xl font-serif font-bold text-center text-slate-900 mb-12">
           Our Legal Services
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
@@ -69,7 +69,7 @@ export function Services() {
               <Link href={service.href}>
                 <div className="bg-gray-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 cursor-pointer hover:bg-orange-100">
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 flex items-center justify-center bg-slate-900 rounded-full">
+                    <div className="w-12 h-12 flex items-center justify-center bg-navy rounded-full">
                       <service.icon className="w-6 h-6 text-gold" />
                     </div>
                     <h3 className="text-xl font-semibold text-slate-900">

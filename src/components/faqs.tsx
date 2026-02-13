@@ -35,7 +35,7 @@ export function FAQs() {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-slate-900">
+    <section className="py-16 md:py-24 bg-navy">
       <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
         <h2 className="text-3xl md:text-4xl font-serif font-bold text-slate-200 text-center mb-10">
           Frequently Asked Questions
@@ -44,7 +44,7 @@ export function FAQs() {
           {faqs.map((faq, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
@@ -63,7 +63,7 @@ export function FAQs() {
               </div>
               {openIndex === index && (
                 <motion.p
-                  initial={{ opacity: 0, height: 0 }}
+                  initial={{ opacity: 1, height: 0 }}
                   animate={{ opacity: 1, height: "auto" }}
                   exit={{ opacity: 0, height: 0 }}
                   transition={{ duration: 0.3 }}

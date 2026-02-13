@@ -28,16 +28,16 @@ const reasons = [
 export function WhyChooseUs() {
   return (
     <motion.section
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 1, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      className="py-16 md:py-24 bg-slate-900"
+      className="py-16 md:py-24 bg-navy"
     >
       <div className="container mx-auto px-4 sm:px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Bento Grid Section */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 1, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
@@ -82,7 +82,7 @@ export function WhyChooseUs() {
 
           {/* Why Choose Us Section */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 1, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
@@ -95,7 +95,7 @@ export function WhyChooseUs() {
               {reasons.map((reason, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 1, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
@@ -106,7 +106,7 @@ export function WhyChooseUs() {
                     transition={{ type: "spring", stiffness: 300 }}
                     className="flex-shrink-0"
                   >
-                    <div className="w-12 h-12 rounded-full bg-slate-200 flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
                       <reason.icon className="w-6 h-6 text-gold" />
                     </div>
                   </motion.div>
