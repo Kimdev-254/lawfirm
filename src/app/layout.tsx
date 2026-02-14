@@ -26,10 +26,10 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
-      { url: '/new-logo.png', type: 'image/png' },
+      { url: '/kenneth-waweru-logo.png', type: 'image/png' },
     ],
     apple: [
-      { url: '/new-logo.png' },
+      { url: '/kenneth-waweru-logo.png' },
     ],
   },
 }
