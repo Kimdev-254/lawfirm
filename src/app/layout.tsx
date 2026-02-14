@@ -19,12 +19,7 @@ const cormorant = Cormorant_Garamond({
   weight: ["300", "400", "500", "600", "700"],
 })
 
-// const montserrat = Montserrat({
-//   subsets: ["latin"],
-//   variable: "--font-montserrat",
-//   display: "swap",
-//   weight: ["300", "400", "500", "600", "700"],
-// })
+// Montserrat font removed as it was unused and causing build errors
 
 export const metadata: Metadata = {
   title: "Kenneth Waweru & Company Advocates",

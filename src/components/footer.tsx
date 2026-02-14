@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import {
   Facebook,
   Twitter,
@@ -13,9 +14,11 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="space-y-4">
             <Link href="/" className="block">
-              <img
+              <Image
                 src="/new-logo.png"
                 alt="Kenneth Waweru & Company Advocates"
+                width={300}
+                height={100}
                 className="h-24 w-auto object-contain bg-white/5 p-2 rounded-lg"
               />
             </Link>
