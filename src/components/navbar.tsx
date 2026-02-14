@@ -116,7 +116,7 @@ export function Navbar() {
       <nav className="container mx-auto px-1 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3">
           <Image
-            src="/new-logo.png"
+            src="/kenneth-waweru-logo.png"
             alt="Kenneth Waweru & Company Advocates"
             width={200}
             height={56}
