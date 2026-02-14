@@ -45,7 +45,7 @@ export default function RootLayout({
       lang="en"
       className={`${playfair.variable} ${cormorant.variable} scroll-smooth`}
     >
-      <body className="bg-background text-foreground antialiased font-montserrat">
+      <body className="bg-background text-foreground antialiased font-sans">
         {children}
         <ToastContainer
           position="top-center"  // ⬅ Centers the pop-up
