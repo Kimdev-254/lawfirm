@@ -68,7 +68,6 @@ module.exports = {
       fontFamily: {
         playfair: ["var(--font-playfair)"],
         cormorant: ["var(--font-cormorant)"],
-        montserrat: ["var(--font-montserrat)"],
       },
       borderRadius: {
         lg: "var(--radius)",
