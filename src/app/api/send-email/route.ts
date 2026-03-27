@@ -3,12 +3,12 @@ import nodemailer from "nodemailer";
 
 export async function POST(req: Request) {
   try {
-    const { firstName, lastName, phone, email, incidentLocation, subject,message } = await req.json();
+    const { firstName, lastName, phone, email, incidentLocation, subject, message } = await req.json();
 
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
       port: Number(process.env.SMTP_PORT),
-      secure: false, 
+      secure: false,
       auth: {
         user: process.env.SMTP_EMAIL,
         pass: process.env.SMTP_PASSWORD,
@@ -16,19 +16,11 @@ export async function POST(req: Request) {
     });
 
     const mailOptions = {
-      from: email, // Sender (your Gmail)
-      to: process.env.SMTP_EMAIL, // Recipient (your Gmail or another email)
-      replyTo: email, 
-      subject: "New Contact Form Submission",
-      text: `You have a New Case Request from ${firstName} ${lastName}.
-       Phone: ${phone}
-       Email: ${email}
-       Location: ${incidentLocation}
-       
-       Subject: ${subject}
-
-       Message:
-      ${message}`,
+      from: `"Website Form" <${process.env.SMTP_EMAIL}>`, // client's email
+      to: process.env.SMTP_EMAIL, // client receives messages
+      replyTo: email, // user (johndoe23@gmail.com)
+      subject: `New Case Request: ${subject}`,
+      text: `...`,
     };
 
     await transporter.sendMail(mailOptions);
