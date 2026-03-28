@@ -1,69 +1,94 @@
 import { NextResponse } from "next/server";
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+const MAX_MESSAGE_LENGTH = 5000;
+
+function sanitize(value: unknown): string {
+  if (typeof value !== "string") return "";
+  return value.replace(/[\r\n]+/g, " ").trim();
+}
 
 export async function POST(req: Request) {
-  try {
-    const {
-      firstName,
-      lastName,
-      phone,
-      email,
-      incidentLocation,
-      subject,
-      message,
-    } = await req.json();
+  // Guard: ensure server is configured correctly
+  if (!process.env.CLIENT_EMAIL) {
+    console.error("CLIENT_EMAIL environment variable is not set");
+    return NextResponse.json(
+      { error: "Server misconfiguration" },
+      { status: 500 }
+    );
+  }
 
-    if (!email || !message || !firstName) {
+  try {
+    const body = await req.json();
+
+    const firstName = sanitize(body.firstName);
+    const lastName = sanitize(body.lastName);
+    const phone = sanitize(body.phone);
+    const email = sanitize(body.email);
+    const incidentLocation = sanitize(body.incidentLocation);
+    const subject = sanitize(body.subject);
+    const message = sanitize(body.message);
+
+    // Validate required fields
+    if (!firstName || !email || !message) {
       return NextResponse.json(
-        { error: "Missing required fields" },
+        { error: "Missing required fields: firstName, email, and message are required" },
         { status: 400 }
       );
     }
 
-    // Create transporter
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT),
-      secure: Number(process.env.SMTP_PORT) === 465, // true for 465, false for 587
-      auth: {
-        user: process.env.SMTP_EMAIL,
-        pass: process.env.SMTP_PASSWORD,
-      },
-    });
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return NextResponse.json(
+        { error: "Invalid email address" },
+        { status: 400 }
+      );
+    }
 
-    // Email config
-    const mailOptions = {
-      from: `"Website Form" <${process.env.SMTP_EMAIL}>`, // ✅ always your/client email
-      to: process.env.SMTP_EMAIL, // ✅ where submissions go
-      replyTo: email, // ✅ user's email (e.g. johndoe23@gmail.com)
+    // Validate message length
+    if (message.length > MAX_MESSAGE_LENGTH) {
+      return NextResponse.json(
+        { error: `Message must be under ${MAX_MESSAGE_LENGTH} characters` },
+        { status: 400 }
+      );
+    }
+
+    const data = await resend.emails.send({
+      from: "Website Form <noreply@yourdomain.com>", // ✅ replace with your verified domain
+      to: [process.env.CLIENT_EMAIL],
+      replyTo: email,
       subject: `New Case Request: ${subject || "No Subject"}`,
       text: `
-      New Case Request from ${firstName} ${lastName || ""}
+New Case Request from ${firstName} ${lastName}
 
-      Phone: ${phone || "N/A"}
-      Email: ${email}
-      Location: ${incidentLocation || "N/A"}
+Phone: ${phone || "N/A"}
+Email: ${email}
+Location: ${incidentLocation || "N/A"}
 
-      Subject: ${subject || "N/A"}
+Subject: ${subject || "N/A"}
 
-      Message:
-      ${message}
-      `,
-    };
+Message:
+${message}
+      `.trim(),
+    });
 
-    // Send email
-    const info = await transporter.sendMail(mailOptions);
-    console.log("Email sent:", info);
+    if (process.env.NODE_ENV !== "production") {
+      console.log("Email sent:", data);
+    }
 
     return NextResponse.json(
       { message: "Email sent successfully!" },
       { status: 200 }
     );
-  } catch (error: any) {
-    console.error("FULL ERROR:", error);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "Unknown error";
+    console.error("Failed to send email:", message);
 
     return NextResponse.json(
-      { error: "Failed to send email", details: error?.message },
+      { error: "Failed to send email" },
       { status: 500 }
     );
   }
