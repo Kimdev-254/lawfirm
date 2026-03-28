@@ -57,21 +57,21 @@ export async function POST(req: Request) {
     }
 
     const data = await resend.emails.send({
-      from: "Website Form <noreply@yourdomain.com>", // ✅ replace with your verified domain
+      from: "Website Form <info@kennethwaweruadvocates.co.ke>", // ✅ replace with your verified domain
       to: [process.env.CLIENT_EMAIL],
       replyTo: email,
       subject: `New Case Request: ${subject || "No Subject"}`,
       text: `
-New Case Request from ${firstName} ${lastName}
+        New Case Request from ${firstName} ${lastName}
 
-Phone: ${phone || "N/A"}
-Email: ${email}
-Location: ${incidentLocation || "N/A"}
+        Phone: ${phone || "N/A"}
+        Email: ${email}
+        Location: ${incidentLocation || "N/A"}
 
-Subject: ${subject || "N/A"}
+        Subject: ${subject || "N/A"}
 
-Message:
-${message}
+        Message:
+        ${message}
       `.trim(),
     });
 
